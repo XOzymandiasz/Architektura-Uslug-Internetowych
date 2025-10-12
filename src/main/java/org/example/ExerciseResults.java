@@ -1,25 +1,40 @@
 package org.example;
 
+import lombok.*;
+
 import java.util.Objects;
 
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Setter @Getter
 public class ExerciseResults implements Comparable<ExerciseResults> {
     private Integer set;
     private Integer reps;
     private Integer weight;
+    private Boolean personalBest;
+
+    private Exercise exercise;
 
     @Override
     public int compareTo(ExerciseResults object) {
-        return 0;
+        if (!this.set.equals(object.set))
+            return this.set.compareTo(object.set);
+
+        if (!this.reps.equals(object.reps))
+            return this.reps.compareTo(object.reps);
+
+        if (!this.weight.equals(object.weight))
+            return this.weight.compareTo(object.weight);
+
+        return Boolean.compare(this.personalBest, object.personalBest);
     }
 
     @Override
     public boolean equals(Object object) {
-        if (this == object){
-            return false;
-        }
-        if (!(object instanceof ExerciseResults)) {
-            return false;
-        }
+        if (this == object) return true;
+        if (!(object instanceof ExerciseResults)) return false;
+        
         return this.set.equals(((ExerciseResults) object).set)
                 && this.reps.equals(((ExerciseResults) object).reps)
                 && this.weight.equals(((ExerciseResults) object).weight);
@@ -27,13 +42,12 @@ public class ExerciseResults implements Comparable<ExerciseResults> {
 
     @Override
     public String toString() {
-        return "ExerciseResults [Set" + set + ": " + reps + " x " + weight + "]";
+        String text = this.personalBest ? "[Personal Best]" : "";
+        return "ExerciseResults [Set" + set + ": " + reps + " x " + weight + " " + text + "]";
     }
 
     @Override
     public int hashCode() {
         return Objects.hashCode(this.set);
     }
-
-
 }
