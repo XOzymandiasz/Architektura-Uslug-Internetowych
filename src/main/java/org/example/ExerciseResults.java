@@ -42,8 +42,8 @@ public class ExerciseResults implements Comparable<ExerciseResults> {
 
     @Override
     public String toString() {
-        String text = this.personalBest ? "[Personal Best]" : "";
-        return "ExerciseResults [Set" + set + ": " + reps + " x " + weight + " " + text + "]";
+        String pr = this.personalBest ? "[Personal Best]" : "";
+        return "Exercise Result [Set" + set + ": " + reps + " x " + weight + " " + pr + "]";
     }
 
     @Override
