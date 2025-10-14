@@ -52,8 +52,8 @@ public class Exercise implements Comparable<Exercise> {
     @Override
     public String toString(){
         return "Name: " + this.name
-                + " Muscle group: " + this.muscleGroup
-                + " Needed equipment: " + this.equipment
+                + " Muscle group: " + this.muscleGroup + ", "
+                + " Needed equipment: " + this.equipment + ", "
                 + " Recommended duration: " + this.duration;
     }
 

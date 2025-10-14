@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -109,6 +110,26 @@ public class Main {
         set.forEach(System.out::println);
 
         //fourth
+        nextQuest("Fourth Quest");
+
+        exercises.stream()
+                .filter(exercise -> "Barbell".equals(exercise.getEquipment()))
+                .sorted(Comparator.comparingInt(Exercise::getDuration).reversed())
+                .forEach(System.out::println);
+
+        //fifth
+        nextQuest("Fifth Quest");
+
+        List<ExerciseResultsDTO> exercisesResultsDTO = exercises.stream()
+                .flatMap(exercise -> exercise.getResults().stream()
+                    .map(results -> ExerciseResultsDTO.from(results, exercise.getName())))
+                .sorted()
+                .toList();
+
+        exercisesResultsDTO.stream().forEach(System.out::println);
+
+        //sixth
+        nextQuest("Sixth Quest");
 
 
 

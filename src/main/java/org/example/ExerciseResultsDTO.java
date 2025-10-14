@@ -22,6 +22,18 @@ public class ExerciseResultsDTO implements Comparable<ExerciseResultsDTO> {
         return Boolean.compare(this.personalBest, object.personalBest);
     }
 
+    public static ExerciseResultsDTO from(ExerciseResults exerciseResults, String exerciseName) {
+        ExerciseResultsDTO dto = new ExerciseResultsDTO();
+        dto.set = exerciseResults.getSet();
+        dto.reps = exerciseResults.getReps();
+        dto.weight = exerciseResults.getWeight();
+        dto.personalBest = exerciseResults.getPersonalBest();
+
+        dto.exerciseName = exerciseName;
+
+        return dto;
+    }
+
     @Override
     public String toString() {
         String pr = this.personalBest ? "[Personal Best]" : "";
