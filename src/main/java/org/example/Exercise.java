@@ -16,11 +16,9 @@ public class Exercise implements Comparable<Exercise> {
     private String equipment;
     private int duration;
 
-    private List<ExerciseResults> results;
+    private List<ExerciseResults> results = new ArrayList<>();
 
     public void addResult(ExerciseResults result) {
-        if (result == null) return;
-        if (this.results == null) results = new ArrayList<>();
         results.add(result);
         result.setExercise(this);
     }
