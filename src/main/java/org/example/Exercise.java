@@ -60,7 +60,7 @@ public class Exercise implements Comparable<Exercise> {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.name, this.muscleGroup, this.equipment);
+        return Objects.hash(this.name, this.muscleGroup, this.equipment, this.duration);
     }
 
 }
