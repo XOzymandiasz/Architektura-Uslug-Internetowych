@@ -48,6 +48,6 @@ public class ExerciseResults implements Comparable<ExerciseResults> {
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(this.set);
+        return Objects.hash(this.set, this.reps, this.weight, this.personalBest);
     }
 }
