@@ -1,6 +1,8 @@
 package org.example;
 
-public class ExerciseResultsDTO implements Comparable<ExerciseResultsDTO> {
+import java.io.Serializable;
+
+public class ExerciseResultsDTO implements Comparable<ExerciseResultsDTO>, Serializable {
     private Integer set;
     private Integer reps;
     private Integer weight;

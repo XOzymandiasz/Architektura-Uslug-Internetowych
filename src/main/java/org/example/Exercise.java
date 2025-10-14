@@ -2,6 +2,7 @@ package org.example;
 
 import lombok.*;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -10,7 +11,7 @@ import java.util.Objects;
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter @Getter
-public class Exercise implements Comparable<Exercise> {
+public class Exercise implements Comparable<Exercise>, Serializable {
     @NonNull private String name;
     @NonNull private String muscleGroup;
     @NonNull private String equipment;
