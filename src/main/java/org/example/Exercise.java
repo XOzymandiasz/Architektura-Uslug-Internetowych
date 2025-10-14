@@ -11,11 +11,12 @@ import java.util.Objects;
 @NoArgsConstructor
 @Setter @Getter
 public class Exercise implements Comparable<Exercise> {
-    private String name;
-    private String muscleGroup;
-    private String equipment;
+    @NonNull private String name;
+    @NonNull private String muscleGroup;
+    @NonNull private String equipment;
     private int duration;
 
+    @Builder.Default
     private List<ExerciseResults> results = new ArrayList<>();
 
     public void addResult(ExerciseResults result) {
