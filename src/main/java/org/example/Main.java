@@ -80,8 +80,17 @@ public class Main {
         return exercises;
     }
 
+    public static void nextQuest(String questName) {
+        System.out.println(" ");
+        for(int i = 0; i<50; i++) System.out.print("-");
+        System.out.println(" ");
+        System.out.println(questName);
+        System.out.println(" ");
+    }
+
     public static void main(String[] args) {
         //second
+        nextQuest("Second Quest");
         List<Exercise> exercises = fillElements();
         exercises.forEach(exercise -> {
             System.out.println(exercise);
@@ -91,6 +100,8 @@ public class Main {
         });
 
         //third
+
+        nextQuest("Third Quest");
         Set<ExerciseResults> set = exercises.stream()
                 .flatMap(exercise -> exercise.getResults().stream())
                 .collect(Collectors.toSet());
