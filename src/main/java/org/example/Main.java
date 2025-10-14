@@ -1,9 +1,8 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -89,6 +88,36 @@ public class Main {
         System.out.println(" ");
     }
 
+    public static void runWithPool(List<ExerciseResultsDTO> exerciseResultsDTO, int parallel){
+        ForkJoinPool forkJoinPool = new ForkJoinPool(parallel);
+        long start = System.currentTimeMillis();
+        Runnable task = () -> exerciseResultsDTO.parallelStream().forEach(exercise -> {
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+
+            System.out.println(Thread.currentThread().getName() + ": " + exercise);
+        });
+
+        try {
+            forkJoinPool.submit(task).join();
+        } finally {{
+            forkJoinPool.shutdown();
+            try {
+                if(!forkJoinPool.awaitTermination(10, TimeUnit.SECONDS)) {
+                    forkJoinPool.shutdownNow();
+                }
+            } catch (InterruptedException e) {
+                forkJoinPool.shutdownNow();
+                Thread.currentThread().interrupt();
+            }
+        }}
+        long end = System.currentTimeMillis();
+        System.out.println(" " + (end - start) + " ms");
+    }
+
     public static void main(String[] args) {
         //second
         nextQuest("Second Quest");
@@ -130,8 +159,25 @@ public class Main {
 
         //sixth
         nextQuest("Sixth Quest");
+        String fileName = "exercises.bin";
 
+        BinarySerializer.save(exercisesResultsDTO, fileName);
 
+        List<ExerciseResultsDTO> loadedDTO = BinarySerializer.load(fileName);
+
+        if (loadedDTO != null){
+            loadedDTO.stream().forEach(System.out::println);
+        }
+
+        //seventh
+        nextQuest("Seventh Quest");
+
+        Integer[] poolSizes = {1, 2, 4, 8};
+
+        for (int size : poolSizes){
+            nextQuest("Size: " + size);
+            runWithPool(loadedDTO, size);
+        }
 
     }
 }
