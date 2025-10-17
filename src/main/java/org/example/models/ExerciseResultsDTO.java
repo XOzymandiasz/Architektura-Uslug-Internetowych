@@ -1,4 +1,4 @@
-package org.example;
+package org.example.models;
 
 import java.io.Serializable;
 
@@ -6,9 +6,9 @@ public class ExerciseResultsDTO implements Comparable<ExerciseResultsDTO>, Seria
     private Integer set;
     private Integer reps;
     private Integer weight;
-    private Boolean personalBest;
+    private Boolean personal_best;
 
-    private String exerciseName;
+    private String exercise_name;
 
     @Override
     public int compareTo(ExerciseResultsDTO object) {
@@ -21,7 +21,7 @@ public class ExerciseResultsDTO implements Comparable<ExerciseResultsDTO>, Seria
         if (!this.weight.equals(object.weight))
             return this.weight.compareTo(object.weight);
 
-        return Boolean.compare(this.personalBest, object.personalBest);
+        return Boolean.compare(this.personal_best, object.personal_best);
     }
 
     public static ExerciseResultsDTO from(ExerciseResults exerciseResults, String exerciseName) {
@@ -29,16 +29,16 @@ public class ExerciseResultsDTO implements Comparable<ExerciseResultsDTO>, Seria
         dto.set = exerciseResults.getSet();
         dto.reps = exerciseResults.getReps();
         dto.weight = exerciseResults.getWeight();
-        dto.personalBest = exerciseResults.getPersonalBest();
+        dto.personal_best = exerciseResults.getPersonal_best();
 
-        dto.exerciseName = exerciseName;
+        dto.exercise_name = exerciseName;
 
         return dto;
     }
 
     @Override
     public String toString() {
-        String pr = this.personalBest ? "[Personal Best]" : "";
-        return  this.exerciseName + "[Set" + set + ": " + reps + " x " + weight + " " + pr + "]";
+        String pr = this.personal_best ? "[Personal Best]" : "";
+        return  this.exercise_name + "[Set" + set + ": " + reps + " x " + weight + " " + pr + "]";
     }
 }
