@@ -1,4 +1,4 @@
-package org.example.component;
+package org.example.utils;
 
 import java.io.*;
 import java.util.List;
