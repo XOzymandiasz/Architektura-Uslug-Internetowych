@@ -1,6 +1,6 @@
 package org.example.service;
 
-import org.example.models.ExerciseResults;
+import org.example.model.ExerciseResults;
 import org.example.repository.ExerciseResultsRepository;
 import org.springframework.stereotype.Service;
 
