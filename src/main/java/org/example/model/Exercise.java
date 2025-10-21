@@ -29,7 +29,7 @@ public class Exercise implements Comparable<Exercise>, Serializable {
     private int duration;
 
     @Builder.Default
-    @OneToMany(mappedBy="exercise", fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+    @OneToMany(mappedBy="exercise", fetch=FetchType.EAGER, orphanRemoval = true, cascade=CascadeType.ALL)
     private List<ExerciseResults> results = new ArrayList<>();
 
 
@@ -43,7 +43,7 @@ public class Exercise implements Comparable<Exercise>, Serializable {
         result.setExercise(this);
     }
 
-    public void removeREsult(ExerciseResults result) {
+    public void removeResult(ExerciseResults result) {
         results.remove(result);
         result.setExercise(null);
     }
