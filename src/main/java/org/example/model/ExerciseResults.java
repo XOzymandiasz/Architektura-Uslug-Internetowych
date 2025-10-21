@@ -16,7 +16,7 @@ public class ExerciseResults implements Comparable<ExerciseResults> {
     @Id
     @Column(name="id", nullable=false, unique=true, columnDefinition = "UUID")
     private UUID id;
-    @Column(name="set", nullable=false)
+    @Column(name="which_set", nullable=false)
     private Integer set;
     @Column(name="reps", nullable=false)
     private Integer reps;
