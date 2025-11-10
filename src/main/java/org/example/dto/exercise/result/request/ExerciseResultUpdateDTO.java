@@ -1,14 +1,11 @@
 package org.example.dto.exercise.result.request;
 
-import jakarta.validation.constraints.NotNull;
-
-import java.util.UUID;
+import jakarta.validation.constraints.Positive;
 
 public record ExerciseResultUpdateDTO(
-        @NotNull UUID id,
-        @NotNull Integer set,
-        @NotNull Integer reps,
-        @NotNull Integer weight,
+        @Positive Integer set,
+        @Positive Integer reps,
+        @Positive Integer weight,
         boolean personalBest
 ) {
 }
