@@ -22,7 +22,7 @@ public class Exercise implements Comparable<Exercise>, Serializable {
     @Column(name="name", nullable=false, unique = true)
     private String name;
     @Column(name="muscle_group", nullable=false)
-    private String muscle_group;
+    private String muscleGroup;
     @Column(name="equipment", nullable=false)
     private String equipment;
     @Column(name="duration", nullable=false)
@@ -53,8 +53,8 @@ public class Exercise implements Comparable<Exercise>, Serializable {
         if (!this.name.equals(object.name))
             return this.name.compareTo(object.name);
 
-        if (!this.muscle_group.equals(object.muscle_group))
-            return this.muscle_group.compareTo(object.muscle_group);
+        if (!this.muscleGroup.equals(object.muscleGroup))
+            return this.muscleGroup.compareTo(object.muscleGroup);
 
         if (!this.equipment.equals(object.equipment))
             return this.equipment.compareTo(object.equipment);
@@ -68,7 +68,7 @@ public class Exercise implements Comparable<Exercise>, Serializable {
         if (!(object instanceof Exercise)) return false;
 
         return this.name.equals(((Exercise) object).name)
-                && this.muscle_group.equals(((Exercise) object).muscle_group)
+                && this.muscleGroup.equals(((Exercise) object).muscleGroup)
                 && this.equipment.equals(((Exercise) object).equipment)
                 && this.duration == ((Exercise) object).duration;
     }
@@ -76,14 +76,14 @@ public class Exercise implements Comparable<Exercise>, Serializable {
     @Override
     public String toString(){
         return "Name: " + this.name
-                + " Muscle group: " + this.muscle_group + ", "
+                + " Muscle group: " + this.muscleGroup + ", "
                 + " Needed equipment: " + this.equipment + ", "
                 + " Recommended duration: " + this.duration;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.name, this.muscle_group, this.equipment, this.duration);
+        return Objects.hash(this.name, this.muscleGroup, this.equipment, this.duration);
     }
 
 }
