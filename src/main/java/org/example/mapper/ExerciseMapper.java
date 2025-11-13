@@ -22,6 +22,8 @@ public interface ExerciseMapper {
     @IterableMapping(qualifiedByName = "toReadDTO")
     List<ExerciseReadResponse> toReadDTOs(List<Exercise> exercises);
 
+    @Mapping(target = "results", ignore = true)
+    @Mapping(target = "muscleGroup", source = "muscleGroup")
     Exercise toEntity(ExerciseCreateRequest readDTO);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
