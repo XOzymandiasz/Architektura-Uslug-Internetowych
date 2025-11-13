@@ -6,10 +6,12 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
 import java.util.UUID;
 
 public interface ExerciseResultsRepository extends JpaRepository<ExerciseResults, UUID> {
     @Modifying(clearAutomatically = true, flushAutomatically = true)
-    @Query("delete from ExerciseResults r where r.id = :id")
-    void hardDeleteById(@Param("id") UUID id);
+    List<ExerciseResults> findByExerciseIdOrderBySetAscRepsAscWeightAsc(UUID exerciseId);
+    java.util.Optional<ExerciseResults> findByIdAndExerciseId(UUID id, UUID exerciseId);
+    boolean existsByExerciseIdAndSetAndRepsAndWeight(UUID exerciseId, Integer set, Integer reps, Integer weight);
 }

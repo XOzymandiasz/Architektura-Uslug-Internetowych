@@ -10,4 +10,6 @@ import java.util.UUID;
 @Repository
 public interface ExerciseRepository extends JpaRepository<Exercise, UUID> {
     public List<Exercise> findByName(String name);
+
+    boolean existsByNameIgnoreCase(String name);
 }
