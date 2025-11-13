@@ -87,7 +87,7 @@ public class ExerciseResultsService {
     }
 
 
-    public void delete(UUID id, UUID exerciseId) {
+    public void delete(UUID exerciseId, UUID id) {
         ensureExerciseExists(exerciseId);
         ExerciseResults result = repository.findByIdAndExerciseId(id, exerciseId)
                 .orElseThrow(() -> new ResponseStatusException(
