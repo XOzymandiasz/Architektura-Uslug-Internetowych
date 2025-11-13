@@ -1,0 +1,85 @@
+### Create new exercise
+POST http://localhost:8080/api/exercise
+Content-Type: application/json
+
+{
+  "id": "11111111-1111-1111-1111-111111111111",
+  "name": "Bench Press",
+  "muscleGroup": "Chest",
+  "equipment": "Barbell",
+  "duration": 60
+}
+
+### Get all exercises (list DTO)
+GET http://localhost:8080/api/exercise/list
+
+### Get exercise by ID
+GET http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111
+
+### Update (PATCH) duration
+PATCH http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111
+Content-Type: application/json
+
+{
+  "duration": 90
+}
+
+
+### Create new exercise result
+POST http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result
+Content-Type: application/json
+
+{
+  "id": "22222222-2222-2222-2222-222222222222",
+  "set": 1,
+  "reps": 8,
+  "weight": 70,
+  "personalBest": true
+}
+
+### Get all results for exercise
+GET http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result
+
+### Get single result
+GET http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result/22222222-2222-2222-2222-222222222222
+
+### Update (PATCH) weight
+PATCH http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result/22222222-2222-2222-2222-222222222222
+Content-Type: application/json
+
+{
+  "weight": 75
+}
+
+### Delete result
+DELETE http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result/22222222-2222-2222-2222-222222222222
+
+### Delete exercise
+DELETE http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111
+
+### Try to create exercise with existing ID (should return 409 Conflict)
+POST http://localhost:8080/api/exercise
+Content-Type: application/json
+
+{
+  "id": "11111111-1111-1111-1111-111111111111",
+  "name": "Duplicate Press",
+  "muscleGroup": "Chest",
+  "equipment": "Barbell",
+  "duration": 30
+}
+
+### Try to get non-existing exercise (should return 404)
+GET http://localhost:8080/api/exercise/99999999-9999-9999-9999-999999999999
+
+### Try to create result for non-existing exercise (should return 404)
+POST http://localhost:8080/api/exercise/99999999-9999-9999-9999-999999999999/results
+Content-Type: application/json
+
+{
+  "id": "88888888-8888-8888-8888-888888888888",
+  "set": 1,
+  "reps": 10,
+  "weight": 100,
+  "personalBest": false
+}
