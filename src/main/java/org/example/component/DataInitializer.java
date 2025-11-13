@@ -1,10 +1,12 @@
 package org.example.component;
 
-import org.example.model.Exercise;
-import org.example.model.ExerciseResults;
+import lombok.RequiredArgsConstructor;
+import org.example.dto.exercise.request.ExerciseCreateRequest;
+import org.example.dto.exercise.result.request.ExerciseResultCreateRequest;
 import org.example.service.ExerciseResultsService;
 import org.example.service.ExerciseService;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
@@ -12,90 +14,31 @@ import java.util.UUID;
 
 @Component
 @Order(1)
+@Profile("dev")
+@RequiredArgsConstructor
 public class DataInitializer implements CommandLineRunner {
     private final ExerciseService exerciseService;
-
-    public DataInitializer(ExerciseService exerciseService, ExerciseResultsService resultsService) {
-        this.exerciseService = exerciseService;
-    }
+    private final ExerciseResultsService resultService;
 
     @Override
-    public void run(String... args) throws Exception {
-        if (!exerciseService.getALl().isEmpty()) return;
+    public void run(String... args) {
+            UUID benchId = UUID.randomUUID();
+            exerciseService.create(new ExerciseCreateRequest(
+                    benchId, "Bench Press", "Chest", "Barbell", 40
+            ));
 
-        Exercise benchPress = Exercise.builder()
-                .id(UUID.randomUUID())
-                .name("Bench_Press")
-                .muscle_group("Chest")
-                .equipment("Barbell")
-                .duration(40)
-                .build();
+            resultService.create(benchId, new ExerciseResultCreateRequest(UUID.randomUUID(), 1, 6, 90, false));
+            resultService.create(benchId, new ExerciseResultCreateRequest(UUID.randomUUID(), 2, 6, 90, false));
+            resultService.create(benchId, new ExerciseResultCreateRequest(UUID.randomUUID(), 3, 5, 90, false));
 
-        benchPress.addResult(ExerciseResults.builder()
-                .id(UUID.randomUUID())
-                .set(1)
-                .reps(6)
-                .weight(90)
-                .personal_best(false)
-                .build());
+            UUID jmId = UUID.randomUUID();
+            exerciseService.create(new ExerciseCreateRequest(
+                    jmId, "JM Press", "Chest", "Barbell", 20
+            ));
 
-        benchPress.addResult(ExerciseResults.builder()
-                .id(UUID.randomUUID())
-                .set(2)
-                .reps(6)
-                .weight(90)
-                .personal_best(false)
-                .build());
-
-        benchPress.addResult(ExerciseResults.builder()
-                .id(UUID.randomUUID())
-                .set(3)
-                .reps(5)
-                .weight(90)
-                .personal_best(false)
-                .build());
-
-        Exercise JMPress = Exercise.builder()
-                .id(UUID.randomUUID())
-                .name("JM_Press")
-                .muscle_group("Chest")
-                .equipment("Barbell")
-                .duration(20)
-                .build();
-
-        JMPress.addResult(ExerciseResults.builder()
-                .id(UUID.randomUUID())
-                .set(1)
-                .reps(8)
-                .weight(70)
-                .personal_best(true)
-                .build());
-
-        JMPress.addResult(ExerciseResults.builder()
-                .id(UUID.randomUUID())
-                .set(2)
-                .reps(8)
-                .weight(75)
-                .personal_best(true)
-                .build());
-
-        JMPress.addResult(ExerciseResults.builder()
-                .id(UUID.randomUUID())
-                .set(3)
-                .reps(5)
-                .weight(80)
-                .personal_best(false)
-                .build());
-
-        JMPress.addResult(ExerciseResults.builder()
-                .id(UUID.randomUUID())
-                .set(4)
-                .reps(3)
-                .weight(80)
-                .personal_best(false)
-                .build());
-
-        exerciseService.save(benchPress);
-        exerciseService.save(JMPress);
-    }
+            resultService.create(jmId, new ExerciseResultCreateRequest(UUID.randomUUID(), 1, 8, 70, true));
+            resultService.create(jmId, new ExerciseResultCreateRequest(UUID.randomUUID(), 2, 8, 75, true));
+            resultService.create(jmId, new ExerciseResultCreateRequest(UUID.randomUUID(), 3, 5, 80, false));
+            resultService.create(jmId, new ExerciseResultCreateRequest(UUID.randomUUID(), 4, 3, 80, false));
+        }
 }
