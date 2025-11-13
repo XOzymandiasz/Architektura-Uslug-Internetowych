@@ -1,24 +1,20 @@
 package org.example.mapper;
 
-import org.example.dto.exercise.result.request.ExerciseResultUpdateDTO;
-import org.example.dto.exercise.result.response.ExerciseResultListDTO;
-import org.example.dto.exercise.result.response.ExerciseResultReadDTO;
+import org.example.dto.exercise.result.request.ExerciseResultCreateRequest;
+import org.example.dto.exercise.result.request.ExerciseResultUpdateRequest;
+import org.example.dto.exercise.result.response.ExerciseResultListResponse;
+import org.example.dto.exercise.result.response.ExerciseResultReadResponse;
 import org.example.model.ExerciseResults;
-import org.mapstruct.BeanMapping;
-import org.mapstruct.Mapper;
-import org.mapstruct.MappingTarget;
-import org.mapstruct.NullValuePropertyMappingStrategy;
+import org.mapstruct.*;
 
-import java.util.List;
-
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface ExerciseResultsMapper {
-    ExerciseResultListDTO toListDTO(ExerciseResults results);
+    ExerciseResultListResponse toListDTO(ExerciseResults results);
 
-    ExerciseResultReadDTO toReadDTO(ExerciseResults result);
+    ExerciseResultReadResponse toReadDTO(ExerciseResults result);
 
-    ExerciseResults toEntity(ExerciseResultReadDTO result);
+    ExerciseResults toEntity(ExerciseResultCreateRequest result);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    void update(@MappingTarget ExerciseResults entity, ExerciseResultUpdateDTO dto);
+    void update(@MappingTarget ExerciseResults entity, ExerciseResultUpdateRequest dto);
 }

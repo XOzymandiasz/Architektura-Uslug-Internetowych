@@ -1,22 +1,23 @@
 package org.example.mapper;
 
-import org.example.dto.exercise.request.ExerciseCreateDTO;
-import org.example.dto.exercise.request.ExerciseUpdateDTO;
-import org.example.dto.exercise.response.ExerciseReadDTO;
+import org.example.dto.exercise.request.ExerciseCreateRequest;
+import org.example.dto.exercise.request.ExerciseUpdateRequest;
+import org.example.dto.exercise.response.ExerciseListResponse;
+import org.example.dto.exercise.response.ExerciseReadResponse;
 import org.example.model.Exercise;
 import org.mapstruct.*;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface ExerciseMapper {
     ExerciseReadDTO toReadDTO(Exercise exercise);
 
     @IterableMapping(qualifiedByName = "toReadDTO")
-    List<ExerciseReadDTO> toReadDTOs(List<Exercise> exercises);
+    List<ExerciseReadResponse> toReadDTOs(List<Exercise> exercises);
 
-    Exercise toEntity(ExerciseCreateDTO readDTO);
+    Exercise toEntity(ExerciseCreateRequest readDTO);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    void update(@MappingTarget Exercise entity, ExerciseUpdateDTO dto);
+    void update(@MappingTarget Exercise entity, ExerciseUpdateRequest dto);
 }
