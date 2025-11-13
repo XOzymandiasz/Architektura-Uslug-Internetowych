@@ -2,7 +2,7 @@ package org.example.dto.exercise.result.response;
 
 import java.util.UUID;
 
-public record ExerciseResultListDTO(
+public record ExerciseResultListResponse(
         UUID id,
         Integer set,
         Integer reps,

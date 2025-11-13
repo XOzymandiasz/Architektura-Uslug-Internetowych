@@ -6,7 +6,7 @@ import jakarta.validation.constraints.Positive;
 
 import java.util.UUID;
 
-public record ExerciseResultCreateDTO(
+public record ExerciseResultCreateRequest(
         @NotNull UUID id,
         @NotNull @Positive Integer set,
         @NotNull @Positive Integer reps,

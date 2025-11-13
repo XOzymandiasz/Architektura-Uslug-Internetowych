@@ -8,7 +8,7 @@ import jakarta.validation.constraints.Size;
 
 import java.util.UUID;
 
-public record ExerciseCreateDTO(
+public record ExerciseCreateRequest(
         @NotNull UUID id,
         @NotBlank @Size(min = 5, max = 100) String name,
         @NotBlank @Size(min = 5, max = 100) String muscleGroup,
