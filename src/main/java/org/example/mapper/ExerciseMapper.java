@@ -11,7 +11,13 @@ import java.util.List;
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface ExerciseMapper {
-    ExerciseReadDTO toReadDTO(Exercise exercise);
+    @Named("toReadDTO")
+    ExerciseReadResponse toReadDTO(Exercise exercise);
+
+    @Named("toListDTO")
+    ExerciseListResponse toListDTO(Exercise exercises);
+
+    List<ExerciseListResponse> toListDTOs(List<Exercise> exercises);
 
     @IterableMapping(qualifiedByName = "toReadDTO")
     List<ExerciseReadResponse> toReadDTOs(List<Exercise> exercises);
