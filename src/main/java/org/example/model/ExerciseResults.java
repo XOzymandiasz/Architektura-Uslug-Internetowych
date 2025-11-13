@@ -23,7 +23,7 @@ public class ExerciseResults implements Comparable<ExerciseResults> {
     @Column(name="weight", nullable=false)
     private Integer weight;
     @Column(name="personal_best", nullable=false)
-    private Boolean personal_best = false;
+    private Boolean personalBest = false;
 
     @ManyToOne
     @JoinColumn(name = "exercise_id")
@@ -45,7 +45,7 @@ public class ExerciseResults implements Comparable<ExerciseResults> {
         if (!this.weight.equals(object.weight))
             return this.weight.compareTo(object.weight);
 
-        return Boolean.compare(this.personal_best, object.personal_best);
+        return Boolean.compare(this.personalBest, object.personalBest);
     }
 
     @Override
@@ -60,12 +60,12 @@ public class ExerciseResults implements Comparable<ExerciseResults> {
 
     @Override
     public String toString() {
-        String pr = this.personal_best ? "[Personal Best]" : "";
+        String pr = this.personalBest ? "[Personal Best]" : "";
         return "Exercise Result [Set" + set + ": " + reps + " x " + weight + " " + pr + "]";
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.set, this.reps, this.weight, this.personal_best);
+        return Objects.hash(this.set, this.reps, this.weight, this.personalBest);
     }
 }
