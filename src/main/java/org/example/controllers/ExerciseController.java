@@ -1,11 +1,16 @@
 package org.example.controllers;
 
-import org.example.dto.exercise.response.ExerciseReadDTO;
+import jakarta.validation.Valid;
+import org.example.dto.exercise.request.ExerciseCreateRequest;
+import org.example.dto.exercise.request.ExerciseUpdateRequest;
+import org.example.dto.exercise.response.ExerciseListResponse;
+import org.example.dto.exercise.response.ExerciseReadResponse;
 import org.example.service.ExerciseService;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/exercise")
@@ -16,7 +21,31 @@ public class ExerciseController {
         this.service = service;
     }
 
-    public List<ExerciseReadDTO> getAll() {
-        return service.getALl();
+    @GetMapping("/{id}")
+    public ExerciseReadResponse getOne(@PathVariable UUID id) {
+        return service.getById(id);
+    }
+
+    @GetMapping("/list")
+    public List<ExerciseListResponse> list() {
+        return service.list();
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public ExerciseReadResponse create(@Valid @RequestBody ExerciseCreateRequest createRequest) {
+        return service.create(createRequest);
+    }
+
+    @PatchMapping("/{id}")
+    public ExerciseReadResponse update(@PathVariable UUID id,
+                                       @Valid @RequestBody ExerciseUpdateRequest updateRequest) {
+        return service.update(id, updateRequest);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable UUID id) {
+        service.delete(id);
     }
 }
