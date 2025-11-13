@@ -15,7 +15,7 @@ import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/exercises/{exerciseId}/results")
+@RequestMapping("/api/exercise/{exerciseId}/result")
 public class ExerciseResultsController {
     private final ExerciseResultsService service;
 
