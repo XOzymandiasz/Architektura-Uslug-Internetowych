@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b263670d-181e-4709-9e66-e55250699793" name="Changes" comment="feat: add application.properties" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Record" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Laboratory3" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;XOzymandiasz&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/XOzymandiasz/Architektura-Uslug-Internetowych&quot;,
+    &quot;accountId&quot;: &quot;ed67725c-cc4c-4dd0-aa59-5a7e5e3c6e06&quot;
+  }
+}</component>
+  <component name="HttpClientOnboardingState">{
+  &quot;isOnboardingCommentShown&quot;: true
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="openjdk-21" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="33tIF2yz52mIIk5wCMlSO0esfiF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "HTTP Request.All in request.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "Laboratory4",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/adamk/Desktop/AUI/Architektura-Uslug-Internetowych",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.13793103",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunDashboard">
+    <option name="configurationStatuses">
+      <map>
+        <entry key="HttpClient.HttpRequestRunConfigurationType">
+          <value>
+            <map>
+              <entry key="All in request" value="STOPPED" />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="AUI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in request" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/src/main/resources/request.http">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="architektura-uslug-internetowych" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="architektura-uslug-internetowych" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="AUI" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.Main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.All in request" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b263670d-181e-4709-9e66-e55250699793" name="Changes" comment="" />
+      <created>1760129834253</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1760129834253</updated>
+      <workItem from="1760129835380" duration="4053000" />
+      <workItem from="1760288268538" duration="2377000" />
+      <workItem from="1760465756304" duration="2731000" />
+      <workItem from="1760468505023" duration="1555000" />
+      <workItem from="1760470238921" duration="3153000" />
+      <workItem from="1760473499792" duration="4635000" />
+      <workItem from="1762549767123" duration="53000" />
+      <workItem from="1762563348919" duration="22000" />
+      <workItem from="1762769668503" duration="520000" />
+      <workItem from="1762770262005" duration="226000" />
+      <workItem from="1762770494199" duration="258000" />
+      <workItem from="1762770756958" duration="91000" />
+      <workItem from="1762771040178" duration="4525000" />
+      <workItem from="1762776101870" duration="753000" />
+      <workItem from="1762864648401" duration="7584000" />
+      <workItem from="1763067465264" duration="5335000" />
+      <workItem from="1763935846732" duration="903000" />
+    </task>
+    <task id="LOCAL-00001" summary="feat: added lombok">
+      <option name="closed" value="true" />
+      <created>1760290505344</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1760290505344</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: finished comparators and added aliases">
+      <option name="closed" value="true" />
+      <created>1760290561794</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1760290561794</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix: fixed lombok config">
+      <option name="closed" value="true" />
+      <created>1760470735144</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1760470735144</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fix: fixed builder">
+      <option name="closed" value="true" />
+      <created>1760470764088</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1760470764088</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fix: added newQuest method to simplify view">
+      <option name="closed" value="true" />
+      <created>1760473787912</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1760473787912</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fix: added fourth and fifth quests">
+      <option name="closed" value="true" />
+      <created>1760473854293</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1760473854293</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: made classes serializable">
+      <option name="closed" value="true" />
+      <created>1760477542183</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1760477542183</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: added BinarySerializer for data serialization">
+      <option name="closed" value="true" />
+      <created>1760477566292</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1760477566292</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: added sixth and seventh quest">
+      <option name="closed" value="true" />
+      <created>1760477586982</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1760477586982</updated>
+    </task>
+    <task id="LOCAL-00010" summary="chore: correct gitignore">
+      <option name="closed" value="true" />
+      <created>1762771163120</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1762771163120</updated>
+    </task>
+    <task id="LOCAL-00011" summary="refactor: improved dto classes">
+      <option name="closed" value="true" />
+      <created>1762775482802</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1762775482802</updated>
+    </task>
+    <task id="LOCAL-00012" summary="refactor: improve mappers">
+      <option name="closed" value="true" />
+      <created>1762866575452</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1762866575452</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Delete unused class">
+      <option name="closed" value="true" />
+      <created>1763067597771</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1763067597771</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat: add queries">
+      <option name="closed" value="true" />
+      <created>1763068019632</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1763068019632</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat: renamed for naming standardization">
+      <option name="closed" value="true" />
+      <created>1763068252609</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1763068252609</updated>
+    </task>
+    <task id="LOCAL-00016" summary="feat: renamed for naming standardization">
+      <option name="closed" value="true" />
+      <created>1763068310664</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1763068310664</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat: create ExerciseListResponse record">
+      <option name="closed" value="true" />
+      <created>1763068340202</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1763068340202</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat: add missing dto's to map">
+      <option name="closed" value="true" />
+      <created>1763068400412</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1763068400413</updated>
+    </task>
+    <task id="LOCAL-00019" summary="feat: refactor for dto classes">
+      <option name="closed" value="true" />
+      <created>1763068452928</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1763068452928</updated>
+    </task>
+    <task id="LOCAL-00020" summary="feat: create controllers">
+      <option name="closed" value="true" />
+      <created>1763068465139</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1763068465139</updated>
+    </task>
+    <task id="LOCAL-00021" summary="refactor: refactor for current project structure">
+      <option name="closed" value="true" />
+      <created>1763068491940</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1763068491940</updated>
+    </task>
+    <task id="LOCAL-00022" summary="feat: add mapstruct">
+      <option name="closed" value="true" />
+      <created>1763068510194</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1763068510194</updated>
+    </task>
+    <task id="LOCAL-00023" summary="refactor: rename muscle_group to muscleGroup">
+      <option name="closed" value="true" />
+      <created>1763072587583</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1763072587583</updated>
+    </task>
+    <task id="LOCAL-00024" summary="feat: add mapping targets">
+      <option name="closed" value="true" />
+      <created>1763072617425</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1763072617425</updated>
+    </task>
+    <task id="LOCAL-00025" summary="refactor: rename personal_best to personalBest">
+      <option name="closed" value="true" />
+      <created>1763072646075</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1763072646075</updated>
+    </task>
+    <task id="LOCAL-00026" summary="fix: correct function signature">
+      <option name="closed" value="true" />
+      <created>1763072678151</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1763072678151</updated>
+    </task>
+    <task id="LOCAL-00027" summary="refactor: rename path from  &quot;/api/exercises/{exerciseId}/results&quot; to &quot;/api/exercise/{exerciseId}/result&quot;">
+      <option name="closed" value="true" />
+      <created>1763072722462</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1763072722462</updated>
+    </task>
+    <task id="LOCAL-00028" summary="feat: create request.http">
+      <option name="closed" value="true" />
+      <created>1763072738191</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1763072738191</updated>
+    </task>
+    <task id="LOCAL-00029" summary="feat: add application.properties">
+      <option name="closed" value="true" />
+      <created>1763072833542</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1763072833542</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix: fixed builder" />
+    <MESSAGE value="fix: added newQuest method to simplify view" />
+    <MESSAGE value="fix: added fourth and fifth quests" />
+    <MESSAGE value="feat: made classes serializable" />
+    <MESSAGE value="feat: added BinarySerializer for data serialization" />
+    <MESSAGE value="feat: added sixth and seventh quest" />
+    <MESSAGE value="chore: correct gitignore" />
+    <MESSAGE value="refactor: improved dto classes" />
+    <MESSAGE value="refactor: improve mappers" />
+    <MESSAGE value="Delete unused class" />
+    <MESSAGE value="feat: add queries" />
+    <MESSAGE value="feat: renamed for naming standardization" />
+    <MESSAGE value="feat: create ExerciseListResponse record" />
+    <MESSAGE value="feat: add missing dto's to map" />
+    <MESSAGE value="feat: refactor for dto classes" />
+    <MESSAGE value="feat: create controllers" />
+    <MESSAGE value="refactor: refactor for current project structure" />
+    <MESSAGE value="feat: add mapstruct" />
+    <MESSAGE value="refactor: rename muscle_group to muscleGroup" />
+    <MESSAGE value="feat: add mapping targets" />
+    <MESSAGE value="refactor: rename personal_best to personalBest" />
+    <MESSAGE value="fix: correct function signature" />
+    <MESSAGE value="refactor: rename path from  &quot;/api/exercises/{exerciseId}/results&quot; to &quot;/api/exercise/{exerciseId}/result&quot;" />
+    <MESSAGE value="feat: create request.http" />
+    <MESSAGE value="feat: add application.properties" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add application.properties" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

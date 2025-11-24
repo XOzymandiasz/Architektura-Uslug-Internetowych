@@ -1,0 +1,646 @@
+POST http://localhost:8080/api/exercise/99999999-9999-9999-9999-999999999999/results
+Content-Type: application/json
+Content-Length: 118
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": "88888888-8888-8888-8888-888888888888",
+  "set": 1,
+  "reps": 10,
+  "weight": 100,
+  "personalBest": false
+}
+
+<> 2025-11-13T232201.404.json
+
+###
+
+GET http://localhost:8080/api/exercise/99999999-9999-9999-9999-999999999999
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-13T232200.404.json
+
+###
+
+POST http://localhost:8080/api/exercise
+Content-Type: application/json
+Content-Length: 149
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": "11111111-1111-1111-1111-111111111111",
+  "name": "Duplicate Press",
+  "muscleGroup": "Chest",
+  "equipment": "Barbell",
+  "duration": 30
+}
+
+<> 2025-11-13T232200-1.201.json
+
+###
+
+DELETE http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
+DELETE http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result/22222222-2222-2222-2222-222222222222
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
+PATCH http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result/22222222-2222-2222-2222-222222222222
+Content-Type: application/json
+Content-Length: 18
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "weight": 75
+}
+
+<> 2025-11-13T232200-4.200.json
+
+###
+
+GET http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result/22222222-2222-2222-2222-222222222222
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-13T232200.405.json
+
+###
+
+GET http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-13T232200-3.200.json
+
+###
+
+POST http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result
+Content-Type: application/json
+Content-Length: 115
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": "22222222-2222-2222-2222-222222222222",
+  "set": 1,
+  "reps": 8,
+  "weight": 70,
+  "personalBest": true
+}
+
+<> 2025-11-13T232200.201.json
+
+###
+
+PATCH http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111
+Content-Type: application/json
+Content-Length: 20
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "duration": 90
+}
+
+<> 2025-11-13T232200-2.200.json
+
+###
+
+GET http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-13T232200-1.200.json
+
+###
+
+GET http://localhost:8080/api/exercise/list
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-13T232200.200.json
+
+###
+
+POST http://localhost:8080/api/exercise
+Content-Type: application/json
+Content-Length: 145
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": "11111111-1111-1111-1111-111111111111",
+  "name": "Bench Press",
+  "muscleGroup": "Chest",
+  "equipment": "Barbell",
+  "duration": 60
+}
+
+<> 2025-11-13T232159.201.json
+
+###
+
+DELETE http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
+POST http://localhost:8080/api/exercise/99999999-9999-9999-9999-999999999999/results
+Content-Type: application/json
+Content-Length: 118
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": "88888888-8888-8888-8888-888888888888",
+  "set": 1,
+  "reps": 10,
+  "weight": 100,
+  "personalBest": false
+}
+
+<> 2025-11-13T231614-1.404.json
+
+###
+
+GET http://localhost:8080/api/exercise/99999999-9999-9999-9999-999999999999
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-13T231614.404.json
+
+###
+
+POST http://localhost:8080/api/exercise
+Content-Type: application/json
+Content-Length: 149
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": "11111111-1111-1111-1111-111111111111",
+  "name": "Duplicate Press",
+  "muscleGroup": "Chest",
+  "equipment": "Barbell",
+  "duration": 30
+}
+
+<> 2025-11-13T231613.409.json
+
+###
+
+DELETE http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result/22222222-2222-2222-2222-222222222222
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-11-13T231613.404.json
+
+###
+
+PATCH http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result/22222222-2222-2222-2222-222222222222
+Content-Type: application/json
+Content-Length: 18
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "weight": 75
+}
+
+<> 2025-11-13T231613-4.200.json
+
+###
+
+GET http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result/22222222-2222-2222-2222-222222222222
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-13T231613.405.json
+
+###
+
+GET http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-13T231613-3.200.json
+
+###
+
+POST http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result
+Content-Type: application/json
+Content-Length: 115
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": "22222222-2222-2222-2222-222222222222",
+  "set": 1,
+  "reps": 8,
+  "weight": 70,
+  "personalBest": true
+}
+
+<> 2025-11-13T231613.201.json
+
+###
+
+PATCH http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111
+Content-Type: application/json
+Content-Length: 20
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "duration": 90
+}
+
+<> 2025-11-13T231613-2.200.json
+
+###
+
+GET http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-13T231613-1.200.json
+
+###
+
+GET http://localhost:8080/api/exercise/list
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-13T231613.200.json
+
+###
+
+POST http://localhost:8080/api/exercise
+Content-Type: application/json
+Content-Length: 145
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": "11111111-1111-1111-1111-111111111111",
+  "name": "Bench Press",
+  "muscleGroup": "Chest",
+  "equipment": "Barbell",
+  "duration": 60
+}
+
+<> 2025-11-13T231612.201.json
+
+###
+
+DELETE http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
+POST http://localhost:8080/api/exercise/99999999-9999-9999-9999-999999999999/results
+Content-Type: application/json
+Content-Length: 118
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": "88888888-8888-8888-8888-888888888888",
+  "set": 1,
+  "reps": 10,
+  "weight": 100,
+  "personalBest": false
+}
+
+<> 2025-11-13T231335.404.json
+
+###
+
+GET http://localhost:8080/api/exercise/99999999-9999-9999-9999-999999999999
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-13T231334-2.404.json
+
+###
+
+POST http://localhost:8080/api/exercise
+Content-Type: application/json
+Content-Length: 149
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": "11111111-1111-1111-1111-111111111111",
+  "name": "Duplicate Press",
+  "muscleGroup": "Chest",
+  "equipment": "Barbell",
+  "duration": 30
+}
+
+<> 2025-11-13T231334.409.json
+
+###
+
+DELETE http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result/22222222-2222-2222-2222-222222222222
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-11-13T231334-1.404.json
+
+###
+
+PATCH http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result/22222222-2222-2222-2222-222222222222
+Content-Type: application/json
+Content-Length: 18
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "weight": 75
+}
+
+<> 2025-11-13T231334.404.json
+
+###
+
+GET http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result/22222222-2222-2222-2222-222222222222
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-13T231334.405.json
+
+###
+
+GET http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-13T231334-1.200.json
+
+###
+
+POST http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result
+Content-Type: application/json
+Content-Length: 115
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": "22222222-2222-2222-2222-222222222222",
+  "set": 1,
+  "reps": 8,
+  "weight": 70,
+  "personalBest": true
+}
+
+<> 2025-11-13T231334.500.json
+
+###
+
+PATCH http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111
+Content-Type: application/json
+Content-Length: 20
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "duration": 90
+}
+
+<> 2025-11-13T231334.200.json
+
+###
+
+GET http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-13T231333-1.200.json
+
+###
+
+GET http://localhost:8080/api/exercise/list
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-13T231333.200.json
+
+###
+
+POST http://localhost:8080/api/exercise
+Content-Type: application/json
+Content-Length: 145
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": "11111111-1111-1111-1111-111111111111",
+  "name": "Bench Press",
+  "muscleGroup": "Chest",
+  "equipment": "Barbell",
+  "duration": 60
+}
+
+<> 2025-11-13T231333.409.json
+
+###
+
+POST http://localhost:8080/api/exercise/99999999-9999-9999-9999-999999999999/results
+Content-Type: application/json
+Content-Length: 118
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": "88888888-8888-8888-8888-888888888888",
+  "set": 1,
+  "reps": 10,
+  "weight": 100,
+  "personalBest": false
+}
+
+<> 2025-11-13T231121-3.404.json
+
+###
+
+GET http://localhost:8080/api/exercise/99999999-9999-9999-9999-999999999999
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-13T231121-2.404.json
+
+###
+
+POST http://localhost:8080/api/exercise
+Content-Type: application/json
+Content-Length: 149
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": "11111111-1111-1111-1111-111111111111",
+  "name": "Duplicate Press",
+  "muscleGroup": "Chest",
+  "equipment": "Barbell",
+  "duration": 30
+}
+
+<> 2025-11-13T231121.201.json
+
+###
+
+DELETE http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result/22222222-2222-2222-2222-222222222222
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-11-13T231121-1.404.json
+
+###
+
+PATCH http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result/22222222-2222-2222-2222-222222222222
+Content-Type: application/json
+Content-Length: 18
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "weight": 75
+}
+
+<> 2025-11-13T231121.404.json
+
+###
+
+GET http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result/22222222-2222-2222-2222-222222222222
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-13T231121.405.json
+
+###
+
+GET http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-13T231120-1.404.json
+
+###
+
+POST http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result
+Content-Type: application/json
+Content-Length: 115
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": "22222222-2222-2222-2222-222222222222",
+  "set": 1,
+  "reps": 8,
+  "weight": 70,
+  "personalBest": true
+}
+
+<> 2025-11-13T231120.404.json
+
+###
+
+DELETE http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
+PATCH http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111
+Content-Type: application/json
+Content-Length: 20
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "duration": 90
+}
+
+<> 2025-11-13T231120-2.200.json
+
+###
+
+GET http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-13T231120-1.200.json
+
+###
+
