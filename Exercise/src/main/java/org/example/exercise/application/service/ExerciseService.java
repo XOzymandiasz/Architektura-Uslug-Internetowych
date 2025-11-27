@@ -1,9 +1,11 @@
 package org.example.exercise.application.service;
 
+import lombok.RequiredArgsConstructor;
 import org.example.exercise.api.request.ExerciseCreateRequest;
 import org.example.exercise.api.request.ExerciseUpdateRequest;
 import org.example.exercise.api.response.ExerciseListResponse;
 import org.example.exercise.api.response.ExerciseReadResponse;
+import org.example.exercise.application.event.ExerciseEventClient;
 import org.example.exercise.infrastructure.mapper.ExerciseMapper;
 import org.example.exercise.domain.model.Exercise;
 import org.example.exercise.domain.repository.ExerciseRepository;
@@ -15,14 +17,11 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
+@RequiredArgsConstructor
 public class ExerciseService {
     private final ExerciseRepository repository;
     private final ExerciseMapper mapper;
-
-    public ExerciseService(ExerciseRepository repository, ExerciseMapper mapper) {
-        this.repository = repository;
-        this.mapper = mapper;
-    }
+    private final ExerciseEventClient eventClient;
 
     public List<ExerciseListResponse> list() {
         return mapper.toListDTOs(repository.findAll());
@@ -46,6 +45,9 @@ public class ExerciseService {
 
         Exercise exercise = mapper.toEntity(exerciseCreateDTO);
         repository.save(exercise);
+
+        eventClient.sendExerciseCreated(exercise.getId(),  exercise.getName());
+
         return mapper.toReadDTO(exercise);
     }
 
@@ -84,5 +86,6 @@ public class ExerciseService {
                     "Exercise not found");
         }
         repository.deleteById(id);
+        eventClient.sendExerciseDeleted(id);
     }
 }
