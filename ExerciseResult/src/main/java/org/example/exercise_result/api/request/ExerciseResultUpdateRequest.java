@@ -1,4 +1,4 @@
-package org.example.dto.exercise.result.request;
+package org.example.exercise_result.api.request;
 
 import jakarta.validation.constraints.Positive;
 

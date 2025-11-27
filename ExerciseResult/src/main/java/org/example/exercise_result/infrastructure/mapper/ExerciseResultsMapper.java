@@ -1,9 +1,9 @@
-package org.example.mapper;
+package org.example.exercise_result.infrastructure.mapper;
 
-import org.example.dto.exercise.result.request.ExerciseResultCreateRequest;
-import org.example.dto.exercise.result.request.ExerciseResultUpdateRequest;
-import org.example.dto.exercise.result.response.ExerciseResultListResponse;
-import org.example.dto.exercise.result.response.ExerciseResultReadResponse;
+import org.example.exercise_result.api.request.ExerciseResultCreateRequest;
+import org.example.exercise_result.api.request.ExerciseResultUpdateRequest;
+import org.example.exercise_result.api.response.ExerciseResultListResponse;
+import org.example.exercise_result.api.response.ExerciseResultReadResponse;
 import org.example.model.ExerciseResults;
 import org.mapstruct.*;
 

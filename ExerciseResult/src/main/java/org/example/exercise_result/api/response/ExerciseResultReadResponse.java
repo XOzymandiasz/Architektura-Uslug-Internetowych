@@ -1,4 +1,4 @@
-package org.example.dto.exercise.result.response;
+package org.example.exercise_result.api.response;
 
 
 import java.util.UUID;

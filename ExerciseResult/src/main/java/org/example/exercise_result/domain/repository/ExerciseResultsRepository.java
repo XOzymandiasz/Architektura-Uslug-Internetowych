@@ -1,4 +1,4 @@
-package org.example.repository;
+package org.example.exercise_result.domain.repository;
 
 import org.example.model.ExerciseResults;
 import org.springframework.data.jpa.repository.JpaRepository;

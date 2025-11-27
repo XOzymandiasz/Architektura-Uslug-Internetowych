@@ -2,11 +2,8 @@ package org.example.exercise.domain.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.example.model.ExerciseResults;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -29,24 +26,9 @@ public class Exercise implements Comparable<Exercise>, Serializable {
     @Column(name="duration", nullable=false)
     private int duration;
 
-    @Builder.Default
-    @OneToMany(mappedBy="exercise", fetch=FetchType.EAGER, orphanRemoval = true, cascade=CascadeType.ALL)
-    private List<ExerciseResults> results = new ArrayList<>();
-
-
     @PrePersist
     protected void requireIdProvidedByUser() {
         if (id == null) throw new IllegalStateException("Id should be provided by user");
-    }
-
-    public void addResult(ExerciseResults result) {
-        results.add(result);
-        result.setExercise(this);
-    }
-
-    public void removeResult(ExerciseResults result) {
-        results.remove(result);
-        result.setExercise(null);
     }
 
     @Override

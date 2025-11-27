@@ -1,12 +1,12 @@
-package org.example.controllers;
+package org.example.exercise_result.api.controller;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.example.dto.exercise.result.request.ExerciseResultCreateRequest;
-import org.example.dto.exercise.result.request.ExerciseResultUpdateRequest;
-import org.example.dto.exercise.result.response.ExerciseResultListResponse;
-import org.example.dto.exercise.result.response.ExerciseResultReadResponse;
-import org.example.service.ExerciseResultsService;
+import org.example.exercise_result.api.request.ExerciseResultCreateRequest;
+import org.example.exercise_result.api.request.ExerciseResultUpdateRequest;
+import org.example.exercise_result.api.response.ExerciseResultListResponse;
+import org.example.exercise_result.api.response.ExerciseResultReadResponse;
+import org.example.exercise_result.application.service.ExerciseResultsService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

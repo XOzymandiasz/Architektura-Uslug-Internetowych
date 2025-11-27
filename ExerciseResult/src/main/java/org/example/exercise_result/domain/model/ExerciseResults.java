@@ -1,4 +1,4 @@
-package org.example.model;
+package org.example.exercise_result.domain.model;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -25,9 +25,8 @@ public class ExerciseResults implements Comparable<ExerciseResults> {
     @Column(name="personal_best", nullable=false)
     private Boolean personalBest = false;
 
-    @ManyToOne
     @JoinColumn(name = "exercise_id")
-    private Exercise exercise;
+    private long parentId;
 
     @PrePersist
     protected void requireIdProvidedByUser() {
