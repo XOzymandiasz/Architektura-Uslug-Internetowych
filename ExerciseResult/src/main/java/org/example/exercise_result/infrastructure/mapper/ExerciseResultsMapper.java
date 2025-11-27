@@ -4,7 +4,7 @@ import org.example.exercise_result.api.request.ExerciseResultCreateRequest;
 import org.example.exercise_result.api.request.ExerciseResultUpdateRequest;
 import org.example.exercise_result.api.response.ExerciseResultListResponse;
 import org.example.exercise_result.api.response.ExerciseResultReadResponse;
-import org.example.model.ExerciseResults;
+import org.example.exercise_result.domain.model.ExerciseResults;
 import org.mapstruct.*;
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)

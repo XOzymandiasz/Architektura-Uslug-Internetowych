@@ -1,10 +1,8 @@
 package org.example.exercise_result.domain.repository;
 
-import org.example.model.ExerciseResults;
+import org.example.exercise_result.domain.model.ExerciseResults;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 import java.util.UUID;
