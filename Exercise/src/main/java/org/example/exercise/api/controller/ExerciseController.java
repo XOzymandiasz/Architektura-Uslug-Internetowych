@@ -1,11 +1,11 @@
-package org.example.web.controller;
+package org.example.exercise.api.controller;
 
 import jakarta.validation.Valid;
-import org.example.web.request.ExerciseCreateRequest;
-import org.example.web.request.ExerciseUpdateRequest;
-import org.example.web.response.ExerciseListResponse;
-import org.example.web.response.ExerciseReadResponse;
-import org.example.application.service.ExerciseService;
+import org.example.exercise.api.request.ExerciseCreateRequest;
+import org.example.exercise.api.request.ExerciseUpdateRequest;
+import org.example.exercise.api.response.ExerciseListResponse;
+import org.example.exercise.api.response.ExerciseReadResponse;
+import org.example.exercise.application.service.ExerciseService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

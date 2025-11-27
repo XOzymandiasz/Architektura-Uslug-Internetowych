@@ -1,4 +1,4 @@
-package org.example.web.request;
+package org.example.exercise.api.request;
 
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;

@@ -1,12 +1,12 @@
-package org.example.application.service;
+package org.example.exercise.application.service;
 
-import org.example.web.request.ExerciseCreateRequest;
-import org.example.web.request.ExerciseUpdateRequest;
-import org.example.web.response.ExerciseListResponse;
-import org.example.web.response.ExerciseReadResponse;
-import org.example.infrastructure.mapper.ExerciseMapper;
-import org.example.domain.model.Exercise;
-import org.example.domain.repository.ExerciseRepository;
+import org.example.exercise.api.request.ExerciseCreateRequest;
+import org.example.exercise.api.request.ExerciseUpdateRequest;
+import org.example.exercise.api.response.ExerciseListResponse;
+import org.example.exercise.api.response.ExerciseReadResponse;
+import org.example.exercise.infrastructure.mapper.ExerciseMapper;
+import org.example.exercise.domain.model.Exercise;
+import org.example.exercise.domain.repository.ExerciseRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;

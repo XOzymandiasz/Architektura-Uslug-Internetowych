@@ -1,6 +1,6 @@
-package org.example.domain.repository;
+package org.example.exercise.domain.repository;
 
-import org.example.domain.model.Exercise;
+import org.example.exercise.domain.model.Exercise;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

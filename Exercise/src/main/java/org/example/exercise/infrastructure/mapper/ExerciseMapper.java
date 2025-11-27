@@ -1,10 +1,10 @@
-package org.example.infrastructure.mapper;
+package org.example.exercise.infrastructure.mapper;
 
-import org.example.web.request.ExerciseCreateRequest;
-import org.example.web.request.ExerciseUpdateRequest;
-import org.example.web.response.ExerciseListResponse;
-import org.example.web.response.ExerciseReadResponse;
-import org.example.domain.model.Exercise;
+import org.example.exercise.api.request.ExerciseCreateRequest;
+import org.example.exercise.api.request.ExerciseUpdateRequest;
+import org.example.exercise.api.response.ExerciseListResponse;
+import org.example.exercise.api.response.ExerciseReadResponse;
+import org.example.exercise.domain.model.Exercise;
 import org.mapstruct.*;
 
 import java.util.List;

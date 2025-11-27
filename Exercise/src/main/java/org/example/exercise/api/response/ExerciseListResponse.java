@@ -1,4 +1,4 @@
-package org.example.web.response;
+package org.example.exercise.api.response;
 
 import java.util.UUID;
 

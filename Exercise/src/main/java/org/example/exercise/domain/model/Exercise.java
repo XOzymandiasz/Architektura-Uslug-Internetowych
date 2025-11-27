@@ -1,4 +1,4 @@
-package org.example.domain.model;
+package org.example.exercise.domain.model;
 
 import jakarta.persistence.*;
 import lombok.*;
