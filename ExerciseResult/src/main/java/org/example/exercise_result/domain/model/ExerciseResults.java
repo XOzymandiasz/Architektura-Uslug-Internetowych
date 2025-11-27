@@ -16,6 +16,8 @@ public class ExerciseResults implements Comparable<ExerciseResults> {
     @Id
     @Column(name="id", nullable=false, unique=true, columnDefinition = "UUID")
     private UUID id;
+    @Column(name = "exercise_id", nullable=false)
+    private UUID exerciseId;
     @Column(name="which_set", nullable=false)
     private Integer set;
     @Column(name="reps", nullable=false)
@@ -24,9 +26,6 @@ public class ExerciseResults implements Comparable<ExerciseResults> {
     private Integer weight;
     @Column(name="personal_best", nullable=false)
     private Boolean personalBest = false;
-
-    @JoinColumn(name = "exercise_id")
-    private long parentId;
 
     @PrePersist
     protected void requireIdProvidedByUser() {

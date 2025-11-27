@@ -4,10 +4,8 @@ import org.example.exercise_result.api.request.ExerciseResultCreateRequest;
 import org.example.exercise_result.api.request.ExerciseResultUpdateRequest;
 import org.example.exercise_result.api.response.ExerciseResultListResponse;
 import org.example.exercise_result.api.response.ExerciseResultReadResponse;
+import org.example.exercise_result.domain.model.ExerciseResults;
 import org.example.exercise_result.infrastructure.mapper.ExerciseResultsMapper;
-import org.example.model.Exercise;
-import org.example.model.ExerciseResults;
-import org.example.repository.ExerciseRepository;
 import org.example.exercise_result.domain.repository.ExerciseResultsRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -19,19 +17,16 @@ import java.util.UUID;
 
 @Service
 public class ExerciseResultsService {
-    private final ExerciseRepository exerciseRepository;
     private final ExerciseResultsRepository repository;
     private final ExerciseResultsMapper mapper;
 
-    public ExerciseResultsService(ExerciseRepository exerciseRepository, ExerciseResultsRepository repository, ExerciseResultsMapper mapper) {
-        this.exerciseRepository = exerciseRepository;
+    public ExerciseResultsService(ExerciseResultsRepository repository, ExerciseResultsMapper mapper) {
         this.repository = repository;
         this.mapper = mapper;
     }
 
     @Transactional(readOnly = true)
     public List<ExerciseResultListResponse> getALl(UUID exerciseId) {
-        ensureExerciseExists(exerciseId);
         return repository.findByExerciseIdOrderBySetAscRepsAscWeightAsc(exerciseId)
                 .stream()
                 .map(mapper::toListDTO)
@@ -39,30 +34,29 @@ public class ExerciseResultsService {
     }
 
     public ExerciseResultReadResponse create(UUID exerciseId, ExerciseResultCreateRequest exerciseResultCreateDTO) {
-        Exercise exercise = exerciseRepository.findById(exerciseId)
-                .orElseThrow(() -> new ResponseStatusException(
-                        HttpStatus.NOT_FOUND,
-                        "Exercise not found"));
-
         if (repository.existsById(exerciseResultCreateDTO.id())) {
             throw new ResponseStatusException(
                     HttpStatus.CONFLICT,
                     "Result with given id already exists");
         }
-        if (repository.existsByExerciseIdAndSetAndRepsAndWeight(exerciseId, exerciseResultCreateDTO.set(), exerciseResultCreateDTO.reps(), exerciseResultCreateDTO.weight())) {
+        if (repository.existsByExerciseIdAndSetAndRepsAndWeight(
+                exerciseId,
+                exerciseResultCreateDTO.set(),
+                exerciseResultCreateDTO.reps(),
+                exerciseResultCreateDTO.weight()))
+        {
             throw new ResponseStatusException(
                     HttpStatus.CONFLICT,
                     "Duplicate result for this exercise");
         }
 
         ExerciseResults entity = mapper.toEntity(exerciseResultCreateDTO);
-        entity.setExercise(exercise);
+        entity.setExerciseId(exerciseId);
         repository.save(entity);
         return mapper.toReadDTO(entity);
     }
 
     public ExerciseResultReadResponse update(UUID exerciseId, UUID resultId, ExerciseResultUpdateRequest exerciseResultUpdateDTO) {
-        ensureExerciseExists(exerciseId);
         ExerciseResults entity = repository.findByIdAndExerciseId(resultId, exerciseId)
                 .orElseThrow(() -> new ResponseStatusException(
                         HttpStatus.NOT_FOUND,
@@ -88,19 +82,10 @@ public class ExerciseResultsService {
 
 
     public void delete(UUID exerciseId, UUID id) {
-        ensureExerciseExists(exerciseId);
         ExerciseResults result = repository.findByIdAndExerciseId(id, exerciseId)
                 .orElseThrow(() -> new ResponseStatusException(
                         HttpStatus.NOT_FOUND,
                         "Resul not found"));
         repository.delete(result);
-    }
-
-    private void ensureExerciseExists(UUID exerciseId) {
-        if (!exerciseRepository.existsById(exerciseId)) {
-            throw new ResponseStatusException(
-                    HttpStatus.NOT_FOUND,
-                    "Exercise Not found");
-        }
     }
 }
