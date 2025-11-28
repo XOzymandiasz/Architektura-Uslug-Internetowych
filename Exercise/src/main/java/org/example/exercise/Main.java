@@ -1,4 +1,4 @@
-package org.example.exercise_result.infrastructure.bootstrap;
+package org.example.exercise;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
