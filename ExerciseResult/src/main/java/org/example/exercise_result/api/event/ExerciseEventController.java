@@ -1,5 +1,6 @@
 package org.example.exercise_result.api.event;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.example.exercise_result.application.event.ExerciseEvent;
 import org.example.exercise_result.domain.model.ExerciseRecord;
@@ -24,6 +25,7 @@ public class ExerciseEventController {
         recordRepository.save(record);
     }
 
+    @Transactional
     @DeleteMapping("/{id}")
     public void handleExerciseDeleted(@PathVariable UUID id) {
         resultsRepository.deleteByExerciseId(id);
