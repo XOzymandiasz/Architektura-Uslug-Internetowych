@@ -12,7 +12,7 @@ public class ExerciseEventClient {
 
     private final RestTemplate restTemplate;
 
-    private String exerciseResultBaseUrl;
+    private final String exerciseResultBaseUrl = "http://localhost:5001";
 
     public void sendExerciseCreated(UUID id, String name) {
         ExerciseEvent dto = new ExerciseEvent(id, name);
