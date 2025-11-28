@@ -1,85 +1,59 @@
-### Create new exercise
-POST http://localhost:8080/api/exercise
+### 1) Utwórz nowe ćwiczenie
+POST http://localhost:5002/api/exercise
 Content-Type: application/json
 
 {
-  "id": "11111111-1111-1111-1111-111111111111",
-  "name": "Bench Press",
-  "muscleGroup": "Chest",
+  "id": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+  "name": "Deadlift",
+  "muscleGroup": "Backs",
   "equipment": "Barbell",
-  "duration": 60
+  "duration": 45
 }
 
-### Get all exercises (list DTO)
-GET http://localhost:8080/api/exercise/list
-
-### Get exercise by ID
-GET http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111
-
-### Update (PATCH) duration
-PATCH http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111
+### 2) Dodaj pierwszy result do tego ćwiczenia
+POST http://localhost:5002/api/exercise/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/result
 Content-Type: application/json
 
 {
-  "duration": 90
-}
-
-
-### Create new exercise result
-POST http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result
-Content-Type: application/json
-
-{
-  "id": "22222222-2222-2222-2222-222222222222",
+  "id": "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb",
   "set": 1,
-  "reps": 8,
-  "weight": 70,
+  "reps": 5,
+  "weight": 120,
+  "personalBest": false
+}
+
+### 3) Dodaj drugi result do tego samego ćwiczenia
+POST http://localhost:5002/api/exercise/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/result
+Content-Type: application/json
+
+{
+  "id": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+  "set": 2,
+  "reps": 5,
+  "weight": 130,
   "personalBest": true
 }
 
-### Get all results for exercise
-GET http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result
+### 4) Sprawdź, że są 2 wyniki dla tego ćwiczenia
+GET http://localhost:5002/api/exercise/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/result
 
-### Get single result
-GET http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result/22222222-2222-2222-2222-222222222222
+### 5) Usuń ćwiczenie
+DELETE http://localhost:5002/api/exercise/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
 
-### Update (PATCH) weight
-PATCH http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result/22222222-2222-2222-2222-222222222222
+### 6) Sprawdź, że ćwiczenie już nie istnieje (powinno zwrócić 404)
+GET http://localhost:5002/api/exercise/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
+
+### 7) Sprawdź, że lista wyników dla tego ćwiczenia jest pusta
+GET http://localhost:5002/api/exercise/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/result
+
+### 8) Spróbuj dodać wynik do usuniętego ćwiczenia (powinno być 404, jeśli walidujesz exerciseId)
+POST http://localhost:5002/api/exercise/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/result
 Content-Type: application/json
 
 {
-  "weight": 75
-}
-
-### Delete result
-DELETE http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111/result/22222222-2222-2222-2222-222222222222
-
-### Delete exercise
-DELETE http://localhost:8080/api/exercise/11111111-1111-1111-1111-111111111111
-
-### Try to create exercise with existing ID (should return 409 Conflict)
-POST http://localhost:8080/api/exercise
-Content-Type: application/json
-
-{
-  "id": "11111111-1111-1111-1111-111111111111",
-  "name": "Duplicate Press",
-  "muscleGroup": "Chest",
-  "equipment": "Barbell",
-  "duration": 30
-}
-
-### Try to get non-existing exercise (should return 404)
-GET http://localhost:8080/api/exercise/99999999-9999-9999-9999-999999999999
-
-### Try to create result for non-existing exercise (should return 404)
-POST http://localhost:8080/api/exercise/99999999-9999-9999-9999-999999999999/results
-Content-Type: application/json
-
-{
-  "id": "88888888-8888-8888-8888-888888888888",
-  "set": 1,
-  "reps": 10,
-  "weight": 100,
+  "id": "dddddddd-dddd-dddd-dddd-dddddddddddd",
+  "set": 3,
+  "reps": 3,
+  "weight": 140,
   "personalBest": false
 }
