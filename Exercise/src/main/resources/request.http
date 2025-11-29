@@ -1,5 +1,5 @@
 ### 1) Utwórz nowe ćwiczenie
-POST http://localhost:5002/api/exercise
+POST http://localhost:5001/api/exercise
 Content-Type: application/json
 
 {
@@ -43,17 +43,4 @@ DELETE http://localhost:5002/api/exercise/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
 ### 6) Sprawdź, że ćwiczenie już nie istnieje (powinno zwrócić 404)
 GET http://localhost:5002/api/exercise/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
 
-### 7) Sprawdź, że lista wyników dla tego ćwiczenia jest pusta
-GET http://localhost:5002/api/exercise/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/result
 
-### 8) Spróbuj dodać wynik do usuniętego ćwiczenia (powinno być 404, jeśli walidujesz exerciseId)
-POST http://localhost:5002/api/exercise/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/result
-Content-Type: application/json
-
-{
-  "id": "dddddddd-dddd-dddd-dddd-dddddddddddd",
-  "set": 3,
-  "reps": 3,
-  "weight": 140,
-  "personalBest": false
-}
