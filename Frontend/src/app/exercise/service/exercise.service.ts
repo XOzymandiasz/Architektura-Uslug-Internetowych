@@ -30,7 +30,7 @@ export class ExerciseService {
     );
   }
 
-  update(exercise: Exercise): Observable<any> {
+  update(uuid:string, exercise: Exercise): Observable<any> {
     return this.http.put<Exercise>(
       `${this.baseUrl}`, exercise
     );
