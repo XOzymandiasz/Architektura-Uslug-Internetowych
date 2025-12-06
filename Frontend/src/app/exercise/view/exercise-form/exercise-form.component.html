@@ -1,0 +1,91 @@
+@if (!isEdit) {
+  <h2>Create Exercise</h2>
+} @else {
+  <h2>Edit Exercise</h2>
+}
+
+@if (loading) {
+  <div class="my-3">
+    <div class="alert alert-info">Loading exercise data…</div>
+  </div>
+} @else {
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+    <div class="mb-3 row">
+      <label class="col-2 col-form-label" for="name">Name:</label>
+      <div class="col-4">
+        <input
+          id="name"
+          type="text"
+          class="form-control"
+          formControlName="name"
+        />
+
+        @if (form.get('name')?.invalid && form.get('name')?.touched) {
+          <div class="text-danger">Name is required.</div>
+        }
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <label class="col-2 col-form-label" for="muscleGroup">Muscle Group:</label>
+      <div class="col-4">
+        <input
+          id="muscleGroup"
+          type="text"
+          class="form-control"
+          formControlName="muscleGroup"
+        />
+
+        @if (form.get('muscleGroup')?.invalid && form.get('muscleGroup')?.touched) {
+          <div class="text-danger">Muscle group is required.</div>
+        }
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <label class="col-2 col-form-label" for="equipment">Equipment:</label>
+      <div class="col-4">
+        <input
+          id="equipment"
+          type="text"
+          class="form-control"
+          formControlName="equipment"
+        />
+
+        @if (form.get('equipment')?.invalid && form.get('equipment')?.touched) {
+          <div class="text-danger">Equipment is required.</div>
+        }
+      </div>
+    </div>
+
+
+<div class="mb-3 row">
+  <label class="col-2 col-form-label" for="duration">Duration (minutes):</label>
+  <div class="col-4">
+    <input
+      id="duration"
+      type="number"
+      class="form-control"
+      formControlName="duration"
+      min="1"
+    />
+
+    @if (form.get('duration')?.invalid && form.get('duration')?.touched) {
+      <div class="text-danger">Duration must be a positive number.</div>
+    }
+  </div>
+</div>
+
+<button type="submit" class="btn btn-primary me-2" [disabled]="form.invalid">
+  {{ isEdit ? 'Save Changes' : 'Create Exercise' }}
+</button>
+
+<button type="button" class="btn btn-secondary" (click)="cancel()">
+  Cancel
+</button>
+
+</form>
+
+}

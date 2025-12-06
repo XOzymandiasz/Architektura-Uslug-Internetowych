@@ -1,0 +1,31 @@
+<article class="text--justified">
+  <header><h2>Exercises</h2></header>
+    <table>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>name</th>
+          <th>muscleGroup</th>
+          <th>equipment</th>
+          <th>duration</th>
+          <th>delete</th>
+        </tr>
+      </thead>
+      @if (exercises) {
+    <tbody>
+      @for (exercise of exercises.exercises; track exercise.id) {
+        <tr>
+          <td>{{ exercise.id }}</td>
+          <td>{{ exercise.name }}</td>
+          <td>{{ exercise.muscleGroup }}</td>
+          <td>{{ exercise.equipment }}</td>
+          <td>{{ exercise.duration }}</td>
+          <td>
+            <button (click)="onDelete(exercise)">Delete</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  }
+    </table>
+</article>
