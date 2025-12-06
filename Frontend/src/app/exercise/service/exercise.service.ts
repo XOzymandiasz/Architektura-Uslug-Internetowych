@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Exercise } from '../model/exercise';
+import {Exercises} from '../model/exercises';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,8 @@ export class ExerciseService {
 
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<Exercise[]> {
-    return this.http.get<Exercise[]>(
+  getAll(): Observable<Exercises> {
+    return this.http.get<Exercises>(
       `${this.baseUrl}`
     );
   }

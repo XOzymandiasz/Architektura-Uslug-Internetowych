@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { ExerciseResult } from '../model/exerciseResult';
+import { ExerciseResult } from '../model/exercise-result';
+import {ExerciseResults} from '../model/exercise-results';
 
 
 @Injectable({
@@ -13,8 +14,8 @@ export class Service {
 
   constructor(private http: HttpClient) {}
 
-  getAll(categoryId: string): Observable<ExerciseResult[]> {
-    return this.http.get<ExerciseResult[]>(
+  getAll(categoryId: string): Observable<ExerciseResults> {
+    return this.http.get<ExerciseResults>(
       `${this.baseUrl}/${categoryId}/${this.resultUrl}`
     );
   }
