@@ -3,17 +3,16 @@
     <table>
       <thead>
         <tr>
-          <th>id</th>
-          <th>name</th>
-          <th>muscleGroup</th>
-          <th>equipment</th>
-          <th>duration</th>
-          <th>delete</th>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Muscle Group</th>
+          <th>Equipment</th>
+          <th>Duration</th>
+          <th>Delete</th>
         </tr>
       </thead>
-      @if (exercises) {
     <tbody>
-      @for (exercise of exercises.exercises; track exercise.id) {
+      @for (exercise of exs; track exercise.id) {
         <tr>
           <td>{{ exercise.id }}</td>
           <td>{{ exercise.name }}</td>
@@ -26,6 +25,6 @@
         </tr>
       }
     </tbody>
-  }
     </table>
 </article>
+
