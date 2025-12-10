@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import {ExerciseService} from '../../service/exercise.service';
-import {Exercises} from '../../model/exercises';
 import {Exercise} from '../../model/exercise';
 
 @Component({
@@ -11,13 +10,18 @@ import {Exercise} from '../../model/exercise';
 })
 export class ExerciseListComponent implements OnInit {
 
-  constructor(private service: ExerciseService) {}
+  constructor(private service: ExerciseService,
+              private cdr: ChangeDetectorRef) {}
 
-  exercises: Exercises | undefined;
+
+  exs: Exercise[] = [];
 
   ngOnInit(): void {
     this.service.getAll()
-      .subscribe(exercises => this.exercises = exercises)
+      .subscribe(exercises => {
+        this.exs = exercises;
+        this.cdr.detectChanges();
+      });
   }
 
   onDelete(exercise: Exercise): void {
