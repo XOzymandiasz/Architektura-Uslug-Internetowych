@@ -12,6 +12,22 @@
 
   <form [formGroup]="form" (ngSubmit)="submit()">
 
+
+    <div class="mb-3 row">
+      <label class="col-2 col-form-label" for="name">ID:</label>
+      <div class="col-4">
+        <input
+          id="id"
+          type="text"
+          class="form-control"
+          formControlName="id"
+        />
+      </div>
+      @if (form.get('id')?.invalid && form.get('id')?.touched) {
+        <div class="text-danger">ID is required.</div>
+      }
+    </div>
+
     <div class="mb-3 row">
       <label class="col-2 col-form-label" for="name">Name:</label>
       <div class="col-4">
