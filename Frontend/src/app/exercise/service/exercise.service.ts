@@ -1,26 +1,34 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {map, Observable} from 'rxjs';
 import { Exercise } from '../model/exercise';
-import {Exercises} from '../model/exercises';
+import {ExerciseMapperService} from './exercise-mapper.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ExerciseService {
-  private readonly baseUrl: string = 'api/exercise';
+  private readonly baseUrl: string = '/api/exercise';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private mapper: ExerciseMapperService) {
 
-  getAll(): Observable<Exercises> {
-    return this.http.get<Exercises>(
-      `${this.baseUrl}`
+  }
+
+  getAll(): Observable<Exercise[]> {
+    return this.http.get<any[]>(
+      `${this.baseUrl}/list`
+    ).pipe(
+      map(response => {
+        return this.mapper.collectionRepresentationToModel(response);
+      })
     );
   }
 
   getOne(id: string): Observable<Exercise> {
     return this.http.get<Exercise>(
       `${this.baseUrl}/${id}`
+    ).pipe(
+      map(response => this.mapper.representationToModel(response))
     );
   }
 
@@ -30,9 +38,10 @@ export class ExerciseService {
     );
   }
 
-  update(uuid:string, exercise: Exercise): Observable<any> {
+  update(uuid: string, exercise: Exercise): Observable<Exercise> {
     return this.http.put<Exercise>(
-      `${this.baseUrl}`, exercise
+      `${this.baseUrl}/${uuid}`,
+      exercise
     );
   }
 
