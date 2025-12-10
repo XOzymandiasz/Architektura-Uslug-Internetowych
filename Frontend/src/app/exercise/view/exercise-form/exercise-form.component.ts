@@ -53,7 +53,7 @@ export class ExerciseFormComponent implements OnInit {
       name: ['', Validators.required],
       muscleGroup: ['', Validators.required],
       equipment: ['', Validators.required],
-      duration: ['', Validators.required],
+      duration: [0, [Validators.required, Validators.min(1)]],
     })
   }
 
