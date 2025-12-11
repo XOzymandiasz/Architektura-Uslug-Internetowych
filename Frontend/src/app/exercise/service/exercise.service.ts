@@ -39,7 +39,7 @@ export class ExerciseService {
   }
 
   update(uuid: string, exercise: Exercise): Observable<Exercise> {
-    return this.http.put<Exercise>(
+    return this.http.patch<Exercise>(
       `${this.baseUrl}/${uuid}`,
       exercise
     );
