@@ -24,7 +24,7 @@ export class ExerciseService {
     );
   }
 
-  getOne(id: string): Observable<Exercise> {
+  getOne(id: string | undefined): Observable<Exercise> {
     return this.http.get<Exercise>(
       `${this.baseUrl}/${id}`
     ).pipe(
