@@ -7,6 +7,7 @@ import org.example.exercise_result.api.response.ExerciseResultReadResponse;
 import org.example.exercise_result.domain.model.ExerciseResults;
 import org.example.exercise_result.infrastructure.mapper.ExerciseResultsMapper;
 import org.example.exercise_result.domain.repository.ExerciseResultsRepository;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,6 +24,17 @@ public class ExerciseResultsService {
     public ExerciseResultsService(ExerciseResultsRepository repository, ExerciseResultsMapper mapper) {
         this.repository = repository;
         this.mapper = mapper;
+    }
+
+    public ExerciseResultReadResponse getOne(UUID exerciseId, UUID id) {
+        var result = repository
+                .findByIdAndExerciseId(id, exerciseId)
+                .orElseThrow(() -> new ResponseStatusException(
+                    HttpStatus.NOT_FOUND,
+                    "Result not found"
+                 ));
+
+        return mapper.toReadDTO(result);
     }
 
     @Transactional(readOnly = true)

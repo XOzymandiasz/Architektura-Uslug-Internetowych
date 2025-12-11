@@ -19,6 +19,12 @@ import java.util.UUID;
 public class ExerciseResultsController {
     private final ExerciseResultsService service;
 
+    @GetMapping("/{id}")
+    public ExerciseResultReadResponse getOne(@PathVariable UUID exerciseId,
+                                             @PathVariable UUID id) {
+        return service.getOne(exerciseId, id);
+    }
+
     @GetMapping
     public List<ExerciseResultListResponse> list(@PathVariable UUID exerciseId) {
         return service.getALl(exerciseId);
