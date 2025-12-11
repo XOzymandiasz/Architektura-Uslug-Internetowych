@@ -1,0 +1,51 @@
+<article class="text--justified">
+  <header><h2>Exercises</h2></header>
+  <a [routerLink]="['/exercise', 'new']"
+     target="_blank"
+     class="btn create">
+    Create
+  </a>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Muscle Group</th>
+          <th>Equipment</th>
+          <th>Duration</th>
+          <th>Add Result</th>
+          <th>Delete</th>
+          <th>Update</th>
+        </tr>
+      </thead>
+    <tbody>
+      @for (exercise of exs; track exercise.id) {
+        <tr>
+          <td>{{ exercise.id }}</td>
+          <td>{{ exercise.name }}</td>
+          <td>{{ exercise.muscleGroup }}</td>
+          <td>{{ exercise.equipment }}</td>
+          <td>{{ exercise.duration }}</td>
+          <td>
+            <a [routerLink]="['/exercise', exercise.id, 'results']"
+               target="_blank"
+               class="btn active">
+              Results
+            </a>
+          </td>
+          <td>
+            <a [routerLink]="['/exercise', exercise.id, 'edit']"
+               target="_blank"
+               class="btn update">
+              Update
+            </a>
+          </td>
+          <td>
+            <button class="btn delete" (click)="onDelete(exercise)">Delete</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+    </table>
+</article>
+

@@ -1,0 +1,104 @@
+
+.exercise-result-form {
+  max-width: 500px;
+  min-width: 300px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #1c1b1d;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.5);
+  color: #e6e6e6;
+}
+
+.exercise-result-form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 600;
+  color: #ff4d4d;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #ff8080;
+}
+
+.btn.create {
+  background-color: #3b5942;
+  box-shadow: 0 0 6px rgba(0, 255, 0, 0.25);
+}
+.btn.create:hover {
+  background-color: #1fa33d;
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 8px 12px;
+  border: 1px solid #3d3b3f;
+  background: #242325;
+  color: #e6e6e6;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+input:focus {
+  border-color: #ff4d4d;
+  box-shadow: 0 0 6px rgba(255, 50, 50, 0.4);
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+  transform: scale(1.2);
+}
+
+.error {
+  margin-top: 5px;
+  color: #ff4444;
+  font-size: 12px;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s;
+  color: white;
+}
+
+button.cancel {
+  background-color: #444;
+}
+button.cancel:hover {
+  background-color: #555;
+}
+
+.not-found {
+  padding: 20px;
+  text-align: center;
+  background: #2b1f1f;
+  border-radius: 8px;
+  border: 1px solid #743333;
+}
+
+.not-found p {
+  margin-bottom: 15px;
+  color: #ff8a8a;
+}

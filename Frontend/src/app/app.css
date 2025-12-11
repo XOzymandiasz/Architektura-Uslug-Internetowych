@@ -1,0 +1,26 @@
+
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+app-header {
+  flex-shrink: 0;
+}
+
+app-nav {
+  flex-shrink: 0;
+}
+
+app-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+app-footer {
+  flex-shrink: 0;
+}

@@ -1,0 +1,119 @@
+<div class="exercise-form">
+
+  <h2>
+    @if (!isEdit) {
+      Create Exercise
+    } @else {
+      Edit Exercise
+    }
+  </h2>
+  @if (found) {
+    <div class="my-3">
+      <div class="alert alert-info">Not Found</div>
+    </div>
+  } @else {
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+      <div class="form-row">
+        <label class="col-2 col-form-label" for="name">ID:</label>
+        <div class="col-4">
+          <input
+            id="id"
+            type="text"
+            class="form-control"
+            formControlName="id"
+          />
+        </div>
+        @if (form.get('id')?.invalid && form.get('id')?.touched) {
+          <div class="text-danger">ID is required.</div>
+        }
+      </div>
+
+      <div class="form-row">
+        <label class="col-2 col-form-label" for="name">Name:</label>
+        <div class="col-4">
+          <input
+            id="name"
+            type="text"
+            class="form-control"
+            formControlName="name"
+          />
+
+          @if (form.get('name')?.invalid && form.get('name')?.touched) {
+            <div class="text-danger">Name is required.</div>
+          }
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label class="col-2 col-form-label" for="muscleGroup">Muscle Group:</label>
+        <div class="col-4">
+          <input
+            id="muscleGroup"
+            type="text"
+            class="form-control"
+            formControlName="muscleGroup"
+          />
+
+          @if (form.get('muscleGroup')?.invalid && form.get('muscleGroup')?.touched) {
+            <div class="text-danger">Muscle group is required.</div>
+          }
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label class="col-2 col-form-label" for="equipment">Equipment:</label>
+        <div class="col-4">
+          <input
+            id="equipment"
+            type="text"
+            class="form-control"
+            formControlName="equipment"
+          />
+
+          @if (form.get('equipment')?.invalid && form.get('equipment')?.touched) {
+            <div class="text-danger">Equipment is required.</div>
+          }
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label class="col-2 col-form-label" for="duration">Duration (minutes):</label>
+        <div class="col-4">
+          <input
+            id="duration"
+            type="number"
+            class="form-control"
+            formControlName="duration"
+            min="1"
+          />
+
+          @if (form.get('duration')?.invalid && form.get('duration')?.touched) {
+            <div class="text-danger">Duration must be a positive number.</div>
+          }
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button
+          type="submit"
+          class="btn create"
+          [disabled]="form.invalid"
+        >
+          {{ isEdit ? 'Save Changes' : 'Create' }}
+        </button>
+
+        <button
+          type="button"
+          class="btn cancel"
+          (click)="cancel()"
+        >
+          Cancel
+        </button>
+      </div>
+
+    </form>
+  }
+
+</div>

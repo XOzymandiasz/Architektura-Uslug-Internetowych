@@ -1,0 +1,85 @@
+<div class="exercise-result-form">
+
+  <h2>
+    @if (isEdit) {
+      Edit Exercise Result
+    } @else {
+      Create Exercise Result
+    }
+  </h2>
+
+  @if (isEdit && !found) {
+    <div class="not-found">
+      <p>Result not found.</p>
+      <button type="button" (click)="cancel()">Back to list</button>
+    </div>
+  }
+
+  @if (!isEdit || found) {
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+      <div class="form-row">
+        <label for="id">ID</label>
+        <input id="id" type="text" formControlName="id" />
+        @if (form.get('id')?.touched && form.get('id')?.invalid) {
+          <div class="error">ID is required.</div>
+        }
+      </div>
+
+      <div class="form-row">
+        <label for="exerciseId">Exercise ID</label>
+        <input id="exerciseId" type="text" formControlName="exerciseId" [readonly]="true" />
+        @if (form.get('uuid')?.touched && form.get('uuid')?.invalid) {
+          <div class="error">Exercise ID is required.</div>
+        }
+      </div>
+
+      <div class="form-row">
+        <label for="set">Set</label>
+        <input id="set" type="number" formControlName="set" />
+        @if (form.get('set')?.touched && form.get('set')?.invalid) {
+          <div class="error">Set must be at least 1.</div>
+        }
+      </div>
+
+      <div class="form-row">
+        <label for="reps">Reps</label>
+        <input id="reps" type="number" formControlName="reps" />
+        @if (form.get('reps')?.touched && form.get('reps')?.invalid) {
+          <div class="error">Reps must be at least 1.</div>
+        }
+      </div>
+
+      <div class="form-row">
+        <label for="weight">Weight</label>
+        <input id="weight" type="number" formControlName="weight" />
+        @if (form.get('weight')?.touched && form.get('weight')?.invalid) {
+          <div class="error">Weight must be 0 or more.</div>
+        }
+      </div>
+
+      <div class="form-row">
+        <label for="personalBest">
+          <input
+            id="personalBest"
+            type="checkbox"
+            formControlName="personalBest"
+          />
+          Personal Best
+        </label>
+      </div>
+
+      <div class="buttons">
+        <button type="submit" class="btn create" [disabled]="form.invalid">
+          @if (isEdit) { Update } @else { Create }
+        </button>
+
+        <button type="button" class="cancel" (click)="cancel()">
+          Cancel
+        </button>
+      </div>
+
+    </form>
+  }
+
+</div>

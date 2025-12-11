@@ -1,0 +1,55 @@
+#### 1) Utwórz nowe ćwiczenie
+#POST http://localhost:5002/api/exercise
+#Content-Type: application/json
+#
+#{
+#  "id": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+#  "name": "Deadlift",
+#  "muscleGroup": "Backs",
+#  "equipment": "Barbell",
+#  "duration": 45
+#}
+
+####
+#POST http://localhost:5002/api/exercise
+#Content-Type: application/json
+#
+#{
+#"id": "aaaaaaaa-bbbb-aaaa-bbbb-aaaaaaaaaaaa",
+#"name": "Push klata",
+#"muscleGroup": "Klata",
+#"equipment": "Barbell",
+#"duration": 41
+#}
+
+#### 2) Dodaj pierwszy result do tego ćwiczenia
+#POST http://localhost:5002/api/exercise/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/result
+#Content-Type: application/json
+#
+#{
+#  "id": "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb",
+#  "set": 1,
+#  "reps": 5,
+#  "weight": 120,
+#  "personalBest": false
+#}
+#
+#### 3) Dodaj drugi result do tego samego ćwiczenia
+#POST http://localhost:5002/api/exercise/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/result
+#Content-Type: application/json
+#
+#{
+#  "id": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+#  "set": 2,
+#  "reps": 5,
+#  "weight": 130,
+#  "personalBest": true
+#}
+
+#### 4) Sprawdź, że są 2 wyniki dla tego ćwiczenia
+#GET http://localhost:5002/api/exercise/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/result
+
+###
+GET http://localhost:5002/api/exercise/aaaaaaaa-bbbb-aaaa-aaaa-aaaaaaaaaaaa/result/aaaaaaaa-bbbb-aaaa-aaaa-aaaaaaaaaaad
+
+
