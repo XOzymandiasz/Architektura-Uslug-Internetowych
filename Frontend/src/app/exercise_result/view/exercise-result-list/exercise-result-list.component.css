@@ -1,0 +1,107 @@
+
+article {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #1c1b1d;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  color: #e6e6e6;
+}
+
+article h2 {
+  margin-bottom: 20px;
+  color: #ff4d4d;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+
+.btn {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  transition: 0.2s;
+  color: #ffffff;
+}
+
+
+.btn.create {
+  background-color: #3b5942;
+  box-shadow: 0 0 6px rgba(0, 255, 0, 0.25);
+}
+.btn.create:hover {
+  background-color: #1fa33d;
+}
+
+.btn.update {
+  background-color: #333f67;
+  box-shadow: 0 0 6px rgba(255, 140, 0, 0.25);
+}
+.btn.update:hover {
+  background-color: #93520a;
+}
+
+.btn.delete,
+button.delete {
+  background-color: #772a2a;
+  box-shadow: 0 0 6px rgba(255, 0, 0, 0.35);
+}
+.btn.delete:hover,
+button.delete:hover {
+  background-color: #b02020;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+  background: #242325;
+  color: #e6e6e6;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+thead {
+  background-color: #302f31;
+}
+
+thead th {
+  padding: 12px 8px;
+  text-align: center;
+  border-bottom: 2px solid #3f3d40;
+  font-weight: 600;
+}
+
+tbody tr {
+  border-bottom: 1px solid #3a383b;
+  transition: 0.15s;
+}
+
+tbody tr:hover {
+  background-color: #2f2d30;
+}
+
+td {
+  padding: 10px 8px;
+  text-align: center;
+}
+
+td.actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.empty {
+  margin-top: 20px;
+  color: #b8b8b8;
+  font-style: italic;
+  text-align: center;
+}
