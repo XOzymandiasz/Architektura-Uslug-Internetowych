@@ -1,0 +1,90 @@
+<div class="exercise-details">
+
+
+
+  @if (exercise) {
+
+    <div class="buttons">
+      <a [routerLink]="['/exercise', exercise.id, 'edit']"
+         target="_blank"
+         class="btn update">
+        Update
+      </a>
+      <button class="btn delete" (click)="onDelete()">Delete</button>
+    </div>
+
+    <div class="exercise-header">
+      <div>
+        <h2>{{ exercise.name }}</h2>
+        <p class="exercise-id">ID: {{ exercise.id }}</p>
+      </div>
+
+      <div class="exercise-tags">
+        <span class="tag">{{ exercise.muscleGroup }}</span>
+        <span class="tag secondary">{{ exercise.equipment }}</span>
+      </div>
+    </div>
+
+    <div class="exercise-meta">
+      <div class="meta-item">
+        <span class="label">Muscle group</span>
+        <span class="value">{{ exercise.muscleGroup }}</span>
+      </div>
+
+      <div class="meta-item">
+        <span class="label">Equipment</span>
+        <span class="value">{{ exercise.equipment }}</span>
+      </div>
+
+      <div class="meta-item">
+        <span class="label">Duration</span>
+        <span class="value">{{ exercise.duration }} min</span>
+      </div>
+    </div>
+
+    <div class="exercise-results">
+      <div class="results-header">
+        <h3>Results</h3>
+        <span class="results-count">
+          @if (result) {
+            {{ result }} sets
+          } @else {
+            No results
+          }
+        </span>
+      </div>
+
+      @if (result) {
+
+        <table class="results-table">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>Set</th>
+            <th>Reps</th>
+            <th>Weight</th>
+            <th>PB</th>
+          </tr>
+          </thead>
+          <tbody>
+          <td>{{ result.id }}</td>
+          <td>{{ result.set }}</td>
+          <td>{{ result.reps }}</td>
+          <td>{{ result.weight }}</td>
+          <td>{{ result.personalBest ? "Yes" : "No" }}</td>
+          </tbody>
+        </table>
+
+      } @else {
+
+        <p class="no-results">
+          No results recorded for this exercise yet.
+        </p>
+
+      }
+
+    </div>
+
+  }
+
+</div>
