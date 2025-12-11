@@ -8,10 +8,12 @@
   <table>
     <thead>
     <tr>
+      <th>ID</th>
       <th>Set</th>
       <th>Reps</th>
       <th>Weight</th>
-      <th>PB</th>
+      <th>Personal Best</th>
+      <th>View</th>
       <th>Update</th>
       <th>Delete</th>
     </tr>
@@ -19,10 +21,18 @@
     <tbody>
       @for (result of results; track result.id) {
         <tr>
+          <td>{{ result.id }}</td>
           <td>{{ result.set }}</td>
           <td>{{ result.reps }}</td>
           <td>{{ result.weight }}</td>
           <td>{{ result.personalBest ? 'Yes' : 'No' }}</td>
+          <td>
+            <a [routerLink]="['/exercise', exerciseId, 'result', result.id]"
+               target="_blank"
+               class="btn info">
+              View
+            </a>
+          </td>
           <td>
             <a [routerLink]="['/exercise', exerciseId, 'result', 'new']"
                target="_blank"
@@ -30,6 +40,7 @@
               Update
             </a>
           </td>
+
           <td>
             <button class="btn delete" (click)="onDelete(result.id)">Delete</button>
           </td>
