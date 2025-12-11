@@ -10,7 +10,7 @@ import {Exercise} from '../../model/exercise';
 
 
 @Component({
-  selector: 'app-exercise-list',
+  selector: 'app-exercise-form',
   templateUrl: './exercise-form.component.html',
   styleUrls: ['./exercise-form.component.css'],
   standalone: false
@@ -18,7 +18,7 @@ import {Exercise} from '../../model/exercise';
 export class ExerciseFormComponent implements OnInit {
   form!: FormGroup;
   isEdit = false;
-  loading = false;
+  found = false;
 
   uuid: string | undefined;
   exercise: Exercise | undefined;
@@ -58,8 +58,6 @@ export class ExerciseFormComponent implements OnInit {
   }
 
   private load(uuid: string): void {
-    this.loading = true;
-
     this.service.getOne(uuid).subscribe({
       next: (exercise: Exercise) => {
         this.exercise = exercise;
@@ -73,10 +71,10 @@ export class ExerciseFormComponent implements OnInit {
           duration: exercise.duration,
         });
 
-        this.loading = false;
-      },
-      error: () => {
-        this.loading = false;
+        if(this.exercise === undefined) {
+          console.log(this.exercise);
+          this.found = true;
+        }
       }
     });
   }

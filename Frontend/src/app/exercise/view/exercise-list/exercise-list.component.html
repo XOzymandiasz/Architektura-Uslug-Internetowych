@@ -1,5 +1,10 @@
 <article class="text--justified">
   <header><h2>Exercises</h2></header>
+  <a [routerLink]="['/exercise', 'new']"
+     target="_blank"
+     class="btn create">
+    Create
+  </a>
     <table>
       <thead>
         <tr>
@@ -9,6 +14,8 @@
           <th>Equipment</th>
           <th>Duration</th>
           <th>Delete</th>
+          <th>Update</th>
+          <th>Add Result</th>
         </tr>
       </thead>
     <tbody>
@@ -20,7 +27,21 @@
           <td>{{ exercise.equipment }}</td>
           <td>{{ exercise.duration }}</td>
           <td>
-            <button (click)="onDelete(exercise)">Delete</button>
+            <a [routerLink]="['/exercise', exercise.id, 'results']"
+               target="_blank"
+               class="btn active">
+              Results
+            </a>
+          </td>
+          <td>
+            <a [routerLink]="['/exercise', exercise.id, 'edit']"
+               target="_blank"
+               class="btn update">
+              Update
+            </a>
+          </td>
+          <td>
+            <button class="btn delete" (click)="onDelete(exercise)">Delete</button>
           </td>
         </tr>
       }
