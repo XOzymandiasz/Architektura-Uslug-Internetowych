@@ -19,7 +19,7 @@ export class ExerciseResultService {
     );
   }
 
-  getOne(categoryId:string, id:string): Observable<ExerciseResult> {
+  getOne(categoryId: string | undefined, id: string | undefined): Observable<ExerciseResult> {
     return this.http.get<ExerciseResult>(
       `${this.baseUrl}/${categoryId}/${this.resultUrl}/${id}`
     );
