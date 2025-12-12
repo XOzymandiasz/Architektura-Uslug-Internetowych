@@ -15,12 +15,12 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-            UUID benchId = UUID.randomUUID();
+            UUID benchId = UUID.fromString("630feb5a-37d2-47e1-9e75-0cae5be13180");
             exerciseService.create(new ExerciseCreateRequest(
                     benchId, "Bench Press", "Chest", "Barbell", 40
             ));
 
-            UUID jmId = UUID.randomUUID();
+            UUID jmId = UUID.fromString("4dca6bc6-6001-4408-9d04-50a640a8ebff");
             exerciseService.create(new ExerciseCreateRequest(
                     jmId, "JM Press", "Chest", "Barbell", 20
             ));

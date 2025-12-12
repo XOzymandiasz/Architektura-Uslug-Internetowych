@@ -3,6 +3,8 @@ package org.example.exercise_result.infrastructure.bootstrap;
 import lombok.RequiredArgsConstructor;
 import org.example.exercise_result.api.request.ExerciseResultCreateRequest;
 import org.example.exercise_result.application.service.ExerciseResultsService;
+import org.example.exercise_result.domain.model.ExerciseRecord;
+import org.example.exercise_result.domain.repository.ExerciseRecordRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -11,6 +13,8 @@ import java.util.UUID;
 @Component
 @RequiredArgsConstructor
 public class DataInitializer implements CommandLineRunner {
+
+    private final ExerciseRecordRepository recordRepository;
     private final ExerciseResultsService resultService;
     private final UUID benchId = UUID.fromString("630feb5a-37d2-47e1-9e75-0cae5be13180");
     private final UUID JMId = UUID.fromString("4dca6bc6-6001-4408-9d04-50a640a8ebff");
