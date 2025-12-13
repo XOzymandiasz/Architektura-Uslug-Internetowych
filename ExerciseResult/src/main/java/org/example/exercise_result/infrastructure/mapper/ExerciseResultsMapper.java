@@ -13,7 +13,7 @@ public interface ExerciseResultsMapper {
 
     ExerciseResultReadResponse toReadDTO(ExerciseResults result);
 
-    @Mapping(target = "id", source = "id")
+    //@Mapping(target = "id", source = "id")
     ExerciseResults toEntity(ExerciseResultCreateRequest result);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)

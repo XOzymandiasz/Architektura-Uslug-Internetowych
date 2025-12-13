@@ -22,7 +22,7 @@ public interface ExerciseMapper {
     @IterableMapping(qualifiedByName = "toReadDTO")
     List<ExerciseReadResponse> toReadDTOs(List<Exercise> exercises);
 
-    @Mapping(target = "id", source = "id")
+    //@Mapping(target = "id", source = "id")
     Exercise toEntity(ExerciseCreateRequest readDTO);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
