@@ -22,13 +22,13 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        resultService.create(benchId, new ExerciseResultCreateRequest(UUID.randomUUID(), 1, 6, 90, false));
-        resultService.create(benchId, new ExerciseResultCreateRequest(UUID.randomUUID(), 2, 6, 90, false));
-        resultService.create(benchId, new ExerciseResultCreateRequest(UUID.randomUUID(), 3, 5, 90, false));
-
-        resultService.create(JMId, new ExerciseResultCreateRequest(UUID.randomUUID(), 1, 8, 70, true));
-        resultService.create(JMId, new ExerciseResultCreateRequest(UUID.randomUUID(), 2, 8, 75, true));
-        resultService.create(JMId, new ExerciseResultCreateRequest(UUID.randomUUID(), 3, 5, 80, false));
-        resultService.create(JMId, new ExerciseResultCreateRequest(UUID.randomUUID(), 4, 3, 80, false));
+        //resultService.create(benchId, new ExerciseResultCreateRequest(UUID.randomUUID(), 1, 6, 90, false));
+        //resultService.create(benchId, new ExerciseResultCreateRequest(UUID.randomUUID(), 2, 6, 90, false));
+        //resultService.create(benchId, new ExerciseResultCreateRequest(UUID.randomUUID(), 3, 5, 90, false));
+//
+        //resultService.create(JMId, new ExerciseResultCreateRequest(UUID.randomUUID(), 1, 8, 70, true));
+        //resultService.create(JMId, new ExerciseResultCreateRequest(UUID.randomUUID(), 2, 8, 75, true));
+        //resultService.create(JMId, new ExerciseResultCreateRequest(UUID.randomUUID(), 3, 5, 80, false));
+        //resultService.create(JMId, new ExerciseResultCreateRequest(UUID.randomUUID(), 4, 3, 80, false));
     }
 }
