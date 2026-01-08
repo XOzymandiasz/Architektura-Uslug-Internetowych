@@ -1,0 +1,90 @@
+services:
+  exercise:
+    build:
+      context: ../../Exercise
+      dockerfile: Dockerfile
+    image: exercise:0.0.0-SNAPSHOT
+    restart: always
+    ports:
+      - "5000:5000"
+    depends_on:
+      exercise-result:
+        condition: service_started
+      exercise-db:
+        condition: service_healthy
+    environment:
+      EXERCISE_RESULT_URL: http://exercise-result:5000
+      SPRING_DATASOURCE_URL: jdbc:postgresql://exercise-db:5432/exercise_db
+      SPRING_DATASOURCE_USERNAME: exercise
+      SPRING_DATASOURCE_PASSWORD: exercise
+
+  exercise-db:
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: exercise_db
+      POSTGRES_USER: exercise
+      POSTGRES_PASSWORD: exercise
+    volumes:
+      - exercise_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U exercise -d exercise_db" ]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  exercise-result:
+    build:
+      context: ../../ExerciseResult
+      dockerfile: Dockerfile
+    image: exercise-result:0.0.0-SNAPSHOT
+    restart: always
+    ports:
+      - "5001:5000"
+    depends_on:
+      exercise-result-db:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://exercise-result-db:5432/exercise_result_db
+      SPRING_DATASOURCE_USERNAME: exercise_result
+      SPRING_DATASOURCE_PASSWORD: exercise_result
+
+  exercise-result-db:
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: exercise_result_db
+      POSTGRES_USER: exercise_result
+      POSTGRES_PASSWORD: exercise_result
+    volumes:
+      - exercise_result_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U exercise_result -d exercise_result_db" ]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  gateway:
+    build:
+      context: ../../ApiGateway
+      dockerfile: Dockerfile
+    image: gateway:0.0.0-SNAPSHOT
+    restart: always
+    environment:
+      SERVER_PORT: 5002
+      EXERCISE_URL: "http://exercise:5000"
+      EXERCISE_RESULT_URL: "http://exercise-result:5000"
+
+  frontend:
+    build:
+      context: ../../Frontend
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "3000:5000"
+    environment:
+      API_URL: "http://gateway:5002/api"
+
+volumes:
+   exercise_pgdata:
+   exercise_result_pgdata:

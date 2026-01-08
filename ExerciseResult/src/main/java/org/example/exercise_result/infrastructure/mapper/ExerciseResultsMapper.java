@@ -5,17 +5,76 @@ import org.example.exercise_result.api.request.ExerciseResultUpdateRequest;
 import org.example.exercise_result.api.response.ExerciseResultListResponse;
 import org.example.exercise_result.api.response.ExerciseResultReadResponse;
 import org.example.exercise_result.domain.model.ExerciseResults;
-import org.mapstruct.*;
+import org.springframework.stereotype.Component;
 
-@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
-public interface ExerciseResultsMapper {
-    ExerciseResultListResponse toListDTO(ExerciseResults results);
+import java.util.UUID;
 
-    ExerciseResultReadResponse toReadDTO(ExerciseResults result);
+@Component
+public class ExerciseResultsMapper {
+    public ExerciseResultListResponse toListDTO(ExerciseResults entity) {
+        if (entity == null) {
+            return null;
+        }
 
-    @Mapping(target = "id", source = "id")
-    ExerciseResults toEntity(ExerciseResultCreateRequest result);
+        return new ExerciseResultListResponse(
+                entity.getId(),
+                entity.getSet(),
+                entity.getReps(),
+                entity.getWeight(),
+                entity.getPersonalBest()
+        );
+    }
 
-    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    void update(@MappingTarget ExerciseResults entity, ExerciseResultUpdateRequest dto);
+    public ExerciseResultReadResponse toReadDTO(ExerciseResults entity) {
+        if (entity == null) {
+            return null;
+        }
+
+        return new ExerciseResultReadResponse(
+                entity.getId(),
+                entity.getSet(),
+                entity.getReps(),
+                entity.getWeight(),
+                entity.getPersonalBest()
+        );
+    }
+
+    public ExerciseResults toEntity(ExerciseResultCreateRequest dto) {
+        if (dto == null) {
+            return null;
+        }
+
+        return ExerciseResults.builder()
+                .id(resolveId(dto))
+                .set(dto.set())
+                .reps(dto.reps())
+                .weight(dto.weight())
+                .personalBest(dto.personalBest())
+                .build();
+    }
+
+    public void update(ExerciseResults entity, ExerciseResultUpdateRequest dto) {
+        if (entity == null || dto == null) {
+            return;
+        }
+
+        if (dto.set() != null) {
+            entity.setSet(dto.set());
+        }
+        if (dto.reps() != null) {
+            entity.setReps(dto.reps());
+        }
+        if (dto.weight() != null) {
+            entity.setWeight(dto.weight());
+        }
+        entity.setPersonalBest(dto.personalBest());
+    }
+
+    private UUID resolveId(ExerciseResultCreateRequest dto) {
+        if (dto.id() != null) {
+            return dto.id();
+        }
+
+        throw new IllegalStateException("ExerciseResultCreateRequest.id is required");
+    }
 }

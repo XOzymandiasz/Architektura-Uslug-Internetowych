@@ -1,18 +1,19 @@
 package org.example.exercise.application.event;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.UUID;
 
 @Component
-@RequiredArgsConstructor
 public class ExerciseEventClient {
 
     private final RestTemplate restTemplate;
+    private final String exerciseResultBaseUrl = "http://exercise-result:5000";
 
-    private final String exerciseResultBaseUrl = "http://localhost:5001";
+    public ExerciseEventClient(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
 
     public void sendExerciseCreated(UUID id, String name) {
         ExerciseEvent dto = new ExerciseEvent(id, name);
@@ -24,5 +25,4 @@ public class ExerciseEventClient {
         String url = exerciseResultBaseUrl + "/internal/exercises/" + id;
         restTemplate.delete(url);
     }
-
 }

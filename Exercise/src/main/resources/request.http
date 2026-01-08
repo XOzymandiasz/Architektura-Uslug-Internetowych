@@ -1,14 +1,14 @@
 #### 1) Utwórz nowe ćwiczenie
-#POST http://localhost:5002/api/exercise
-#Content-Type: application/json
-#
-#{
-#  "id": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
-#  "name": "Deadlift",
-#  "muscleGroup": "Backs",
-#  "equipment": "Barbell",
-#  "duration": 45
-#}
+POST http://localhost:5002/api/exercise
+Content-Type: application/json
+
+{
+  "id": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+  "name": "Deadlift",
+  "muscleGroup": "Backs",
+  "equipment": "Barbell",
+  "duration": 45
+}
 
 ####
 #POST http://localhost:5002/api/exercise
