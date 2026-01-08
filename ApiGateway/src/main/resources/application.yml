@@ -1,16 +1,16 @@
 server:
-  port: 5002
+  port: 5000
 
 spring:
   cloud:
     gateway:
       routes:
         - id: exercise-result-service
-          uri: http://localhost:5001
+          uri: http://exercise-result:5000
           predicates:
             - Path=/api/exercise/*/result/**
 
         - id: exercise-service
-          uri: http://localhost:5000
+          uri: http://exercise:5000
           predicates:
             - Path=/api/exercise/**
