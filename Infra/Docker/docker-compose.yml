@@ -1,4 +1,12 @@
 services:
+  eureka:
+    build:
+      context: ../../Eureka
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "5678:5678"
+
   exercise:
     build:
       context: ../../Exercise
@@ -8,12 +16,15 @@ services:
     ports:
       - "5000:5000"
     depends_on:
+      eureka:
+        condition: service_started
       exercise-result:
         condition: service_started
       exercise-db:
         condition: service_healthy
     environment:
       EXERCISE_RESULT_URL: http://exercise-result:5000
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:8761/eureka
       SPRING_DATASOURCE_URL: jdbc:postgresql://exercise-db:5432/exercise_db
       SPRING_DATASOURCE_USERNAME: exercise
       SPRING_DATASOURCE_PASSWORD: exercise
@@ -42,6 +53,8 @@ services:
     ports:
       - "5001:5000"
     depends_on:
+      eureka:
+        condition: service_started
       exercise-result-db:
         condition: service_healthy
     environment:
@@ -70,6 +83,9 @@ services:
       dockerfile: Dockerfile
     image: gateway:0.0.0-SNAPSHOT
     restart: always
+    depends_on:
+      eureka:
+          condition: service_started
     environment:
       SERVER_PORT: 5002
       EXERCISE_URL: "http://exercise:5000"

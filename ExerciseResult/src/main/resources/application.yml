@@ -19,6 +19,13 @@ spring:
       hibernate:
         format_sql: true
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka:5678/eureka
+  instance:
+    prefer-ip-address: true
+
 logging:
   level:
     org.hibernate.SQL: DEBUG

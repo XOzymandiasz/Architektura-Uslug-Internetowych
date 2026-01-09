@@ -14,3 +14,9 @@ spring:
           uri: http://exercise:5000
           predicates:
             - Path=/api/exercise/**
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka:5678/eureka
+  instance:
+    prefer-ip-address: true
