@@ -63,6 +63,8 @@ services:
         condition: service_started
       exercise-result-db:
         condition: service_healthy
+      config-server:
+        condition: service_started
     environment:
       CONFIG_SERVER_URL: http://config-server:8888
 
@@ -81,6 +83,8 @@ services:
         condition: service_started
       exercise-db:
         condition: service_healthy
+      config-server:
+        condition: service_started
     environment:
       CONFIG_SERVER_URL: http://config-server:8888
       EXERCISE_RESULT_BASE_URL: http://exercise-result:5000
@@ -97,10 +101,16 @@ services:
     depends_on:
       eureka:
         condition: service_started
+      exercise:
+        condition: service_started
+      config-server:
+        condition: service_started
     environment:
       SERVER_PORT: 5002
       CONFIG_SERVER_URL: http://config-server:8888
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:5678/eureka
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:5678/eureka/
+      EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE: http://eureka:5678/eureka/
+      EUREKA_CLIENT_SERVICE_URL_DEFAULT_ZONE: http://eureka:5678/eureka/
       EXERCISE_URL: "http://exercise:5000"
       EXERCISE_RESULT_URL: "http://exercise-result:5000"
 
