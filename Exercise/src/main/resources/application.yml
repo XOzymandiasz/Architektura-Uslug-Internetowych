@@ -11,9 +11,13 @@ spring:
     password: ${SPRING_DATASOURCE_PASSWORD:exercise}
     driver-class-name: org.postgresql.Driver
 
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
   jpa:
     hibernate:
-      ddl-auto: ${HIBERNATE_DDL_AUTO:update}
+      ddl-auto: validate
     show-sql: ${JPA_SHOW_SQL:true}
     properties:
       hibernate:
@@ -32,7 +36,6 @@ eureka:
   instance:
     hostname: ${EUREKA_INSTANCE_HOSTNAME:exercise}
     prefer-ip-address: ${EUREKA_PREFER_IP:false}
-    # Te 2 opcje przyspieszają reakcję w dev (szybciej widać UP/DOWN)
     lease-renewal-interval-in-seconds: ${EUREKA_LEASE_RENEW:10}
     lease-expiration-duration-in-seconds: ${EUREKA_LEASE_EXPIRE:30}
 
