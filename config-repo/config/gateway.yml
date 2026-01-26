@@ -29,7 +29,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: ${EUREKA_DEFAULT_ZONE:http://eureka:5678/eureka}
+      defaultZone: http://eureka:5678/eureka
 
   instance:
     hostname: ${EUREKA_INSTANCE_HOSTNAME:gateway}
