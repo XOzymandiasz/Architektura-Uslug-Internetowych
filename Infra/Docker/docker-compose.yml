@@ -1,6 +1,17 @@
 name: fit-gym
 
 services:
+  config-server:
+    build:
+      context: ../../ConfigServer
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8888:8888"
+    environment:
+      CONFIG_GIT_URI: https://github.com/XOzymandiasz/Architektura-Uslug-Internetowych
+      CONFIG_GIT_BRANCH: laboratory7
+
   eureka:
     build:
       context: ../../Eureka
@@ -53,10 +64,7 @@ services:
       exercise-result-db:
         condition: service_healthy
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://exercise-result-db:5432/exercise_result_db
-      SPRING_DATASOURCE_USERNAME: exercise_result
-      SPRING_DATASOURCE_PASSWORD: exercise_result
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:5678/eureka
+      CONFIG_SERVER_URL: http://config-server:8888
 
   exercise:
     build:
@@ -74,11 +82,8 @@ services:
       exercise-db:
         condition: service_healthy
     environment:
+      CONFIG_SERVER_URL: http://config-server:8888
       EXERCISE_RESULT_BASE_URL: http://exercise-result:5000
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:5678/eureka
-      SPRING_DATASOURCE_URL: jdbc:postgresql://exercise-db:5432/exercise_db
-      SPRING_DATASOURCE_USERNAME: exercise
-      SPRING_DATASOURCE_PASSWORD: exercise
 
 
   gateway:
@@ -94,6 +99,7 @@ services:
         condition: service_started
     environment:
       SERVER_PORT: 5002
+      CONFIG_SERVER_URL: http://config-server:8888
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:5678/eureka
       EXERCISE_URL: "http://exercise:5000"
       EXERCISE_RESULT_URL: "http://exercise-result:5000"

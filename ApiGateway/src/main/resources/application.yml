@@ -1,54 +1,5 @@
-server:
-  port: ${SERVER_PORT:8080}
-  forward-headers-strategy: framework
-
 spring:
   application:
     name: gateway
-
-  cloud:
-    gateway:
-      httpclient:
-        wiretap: false
-
-      discovery:
-        locator:
-          enabled: false
-
-      routes:
-        - id: exercise-result
-          uri: lb://exercise-result
-          predicates:
-            - Path=/api/exercise/*/result/**
-
-        - id: exercise
-          uri: lb://exercise
-          predicates:
-            - Path=/api/exercise/**
-
-eureka:
-  client:
-    enabled: true
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: ${EUREKA_DEFAULT_ZONE:http://eureka:5678/eureka}
-
-  instance:
-    hostname: ${EUREKA_INSTANCE_HOSTNAME:gateway}
-    prefer-ip-address: false
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,info
-
-logging:
-  level:
-    root: INFO
-    org.example.api_gateway.logging: INFO
-
-    reactor.netty: WARN
-    org.springframework.cloud.gateway: WARN
-    org.springframework.web: WARN
+  config:
+    import: "optional:configserver:${CONFIG_SERVER_URL}"

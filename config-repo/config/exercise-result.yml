@@ -1,0 +1,46 @@
+server:
+  port: ${SERVER_PORT:5000}
+
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://exercise-result-db:5432/exercise_result_db}
+    username: ${SPRING_DATASOURCE_USERNAME:exercise_result}
+    password: ${SPRING_DATASOURCE_PASSWORD:exercise_result}
+    driver-class-name: org.postgresql.Driver
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: ${JPA_SHOW_SQL:true}
+    properties:
+      hibernate:
+        format_sql: true
+
+eureka:
+  client:
+    enabled: true
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: ${EUREKA_DEFAULT_ZONE:http://eureka:5678/eureka}
+  instance:
+    hostname: ${EUREKA_INSTANCE_HOSTNAME:exercise-result}
+    prefer-ip-address: false
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 30
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    com.netflix.discovery: INFO
