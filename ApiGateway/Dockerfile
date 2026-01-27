@@ -9,4 +9,4 @@ ENV VERSION=${VERSION}
 
 COPY target/apiGateway-${VERSION}.jar apiGateway.jar
 
-CMD ["java", "-jar", "apiGateway.jar"]
+CMD ["sh", "-c", "sleep 20 && exec java -jar apiGateway.jar"]

@@ -9,4 +9,4 @@ ENV VERSION=${VERSION}
 
 COPY target/exercise-${VERSION}.jar exercise.jar
 
-CMD ["java", "-jar", "exercise.jar"]
+CMD ["sh", "-c", "sleep 20 && exec java -jar exercise.jar"]

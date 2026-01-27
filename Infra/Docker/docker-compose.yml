@@ -89,7 +89,6 @@ services:
       CONFIG_SERVER_URL: http://config-server:8888
       EXERCISE_RESULT_BASE_URL: http://exercise-result:5000
 
-
   gateway:
     build:
       context: ../../ApiGateway
@@ -102,6 +101,8 @@ services:
       eureka:
         condition: service_started
       exercise:
+        condition: service_started
+      exercise-result:
         condition: service_started
       config-server:
         condition: service_started
